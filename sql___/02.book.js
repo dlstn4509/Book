@@ -1,4 +1,3 @@
-// mysql -u root -p
 /****************************** global init ********************/
 require('dotenv').config()
 const port = process.env.PORT
@@ -27,9 +26,9 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 
 
 /***************************** router init ********************/
-const sqlRouter = require('./routes/sql')
+const bookRouter = require('./routes/book')
 
-app.use('/sql', sqlRouter)
+app.use('/book', bookRouter)
 
 
 
