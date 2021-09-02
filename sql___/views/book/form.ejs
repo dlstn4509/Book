@@ -1,4 +1,41 @@
 <%- include('../inc/head.ejs') %> 
-<%- include('../inc/header.ejs') %> 
+<%- include('../inc/header.ejs') %>
+<div class="form-wrapper wrapper">
+  <%- include('../inc/book/title-bar.ejs') %> 
+  <form action="/book/save" method="POST" name="saveForm" onsubmit="return onSubmit(this);">
+    <table>
+      <tbody>
+        <tr>
+          <td class="title require">도서명</td>
+          <td class="content">
+            <input type="text" name="title" class="form-control" placeholder="도서명" autofocus>
+          </td>
+        </tr>
+        <tr>
+          <td class="title">저자</td>
+          <td class="content">
+            <input type="text" name="writer" class="form-control" placeholder="저자">
+          </td>
+        </tr>
+        <tr>
+          <td class="title">요약 설명</td>
+          <td class="content">
+            <textarea type="text" name="content" class="form-control" placeholder="요약 설명을 작성하세요."></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td class="title">도서 커버 이미지</td>
+          <td class="content">
+            <input type="file" name="cover" class="form-control" placeholder="도서 커버 이미지">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btn-wrap p-3 text-center">
+      <button class="btn btn-success" id="btSave">저장</button>
+      <button class="btn btn-danger" type="reset">다시작성</button>
+    </div>
+  </form>
+</div> 
 
 <%- include('../inc/foot.ejs') %> 

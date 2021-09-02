@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="/0.BASE/00_all.min.css">
   <link rel="stylesheet" href="/0.BASE/01_bootstrap.min.css">
   <link rel="stylesheet" href="/0.BASE/02_base.css"> <!-- 기본화 -->
-  <link rel="stylesheet" href="/css/common.css">     <!-- 공통사항 -->
-  <link rel="stylesheet" href="/css/<%= file %>.css">
+  <link rel="stylesheet" href="/css/book/common.css">     <!-- 공통사항 -->
+  <% if(css) { %> 
+  <link rel="stylesheet" href="/css/book/form.css">
+  <% } %> 
   <script src="/0.BASE/04_jquery.min.js"></script>
   <script src="/0.BASE/moment.min.js"></script>
   <script src="/0.BASE/lodash.min.js"></script>
