@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>02.promise</title>
+	<title>03.async-await</title>
 </head>
 <body>
 	<form action="#" onsubmit="return send(this)">
-		<input type="text" name="userid" placeholder="아이디">
-		<input type="password" name="userpw" placeholder="패스워드">
+		<input type="text" name="userid" placeholder="아이디" autocomplete="username">
+		<input type="password" name="userpw" placeholder="패스워드" autocomplete="current-password">
 		<button>로그인</button>
 	</form>
-
+</body>
 
 <script>
   const users = [
@@ -50,23 +50,23 @@
     })
   }
 
-  function send(f) {
+  async function send(f) {
+    event.preventDefault()
 		var userid = f.userid.value
 		var userpw = f.userpw.value
-
-    isUser(userid)  // id 검증
-    .then(function(r) {  // pw 검증
-      return isAuth(r, userpw)
-    })
-    .then(function(r) {  // info 검증
-      return getInfo(r)
-    })
-    .catch(function(err) {
+    try {          // try, catch 는 에러 잡는거
+      var r = await isUser(userid)
+      var r2 = await isAuth(r, userpw)
+      var r3 = await getInfo(r2)
+      console.log(r)
+      console.log(r2)
+      console.log(r3)
+    }
+    catch(err) {
       alert(err)
-    })
+    }
     return false
   }
 
 </script>
-</body>
 </html>

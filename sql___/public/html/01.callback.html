@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>01.callback</title>
 </head>
 <body>
 	<form action="#" onsubmit="return send(this)">
@@ -22,7 +22,6 @@
 
 	function isUser(userid, cb) {
 		setTimeout(function() {
-			// var idx = _.findIndex(users, function(v) {return v.userid === userid})
 			var user = users.filter(function(v) {return v.userid === userid})
 			if (user.length === 0) cb('아이디를 찾을 수 없습니다.')
 			else cb(null, user[0].userid)
