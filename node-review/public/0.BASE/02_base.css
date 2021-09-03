@@ -1,0 +1,34 @@
+html, body, h1, h2, h3, h4, h5, h6, p, div, input, textarea, table, td, th, header, section, aside, footer, article, nav, ul, ol, li {margin: 0; padding: 0; box-sizing: border-box; line-height: 1; font-size: inherit; font-weight: inherit;}
+
+input, input:focus {outline: none; font-size: inherit}
+.bt, .bt:focus {outline: none; border: none;}
+
+img {vertical-align: bottom;}
+/* 이미지 라인 맞추기 */
+
+ul, ol {list-style: none;}
+
+table {border-spacing: 0; border-collapse: collapse;}
+/* table끼리 붙어서 간격은 0으로 하기 */
+
+input {box-sizing: border-box;}
+
+h1, h2, h3, h4, h5, h6 {font-weight: inherit;}
+/* 폰트의 두께 -> 부모에게 상속 받아라 */
+/* font-weight: normal, bold, bolder, light, lighter */
+/* font-weight: 100, 200, 300, 400 */
+
+a {color: inherit; text-decoration: none;}
+/* a에 모든 글씨 색상을 부모에게서 상속받겠다 */
+
+.clear::after {display: block; content: ''; clear: both;}
+/* content는 아무거나 입력해야 놔와서 썻음 */
+/* .clear {clear: both;} */
+
+.w100 {width: 100%;}
+.mw100 {max-width: 100%; wi}
+
+.bor {border: 1px solid red;}
+.bob {border: 1px solid blue;}
+.bog {border: 1px solid green;}
+
