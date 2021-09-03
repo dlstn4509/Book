@@ -17,7 +17,7 @@
     <tbody>
     <% for(let book of books) { %> 
       <tr>
-        <td><%= book.id %> </td>
+        <td><%= book.idx %> </td>
         <td class="text-left"><%= book.title %> </td>
         <td><%= book.writer || '미상' %> </td>
         <td class="text-left"><%= cutTail(book.content) %> </td>

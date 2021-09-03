@@ -8,7 +8,9 @@ const {pool} = require('../../modules/mysql-module')
 router.get('/', async (req, res, next) => {
   try {
     const sql = 'SELECT * FROM books ORDER BY idx DESC'
-    const [rs] = await pool.execute(sql)
+    const [rs] = await pool.execute(sql) // = [[a], [b]]  
+    
+    
     
     const ejs = {
       title: '도서 목록',
@@ -21,6 +23,7 @@ router.get('/', async (req, res, next) => {
       chgStatus
     }
     res.status(200).render('book/list', ejs)
+    // res.status(200).json(rs)
   }
   catch(err) {
     next(error(err))
