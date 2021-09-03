@@ -1,3 +1,40 @@
 <script>
-	
+	function getUser(cb) {
+		return new Promise(function(resolve, rejece) {
+			setTimeout(function() {
+				resolve('insu')
+			}, 100)
+		})
+	}
+
+	getUser()
+	.then(function(){
+		
+	})
+	.then(function(){
+
+	})
+
+
+
+	function first() {
+		setTimeout(() => {
+			second()
+		}, 0);
+		console.log('first')
+	}
+
+	function second() {
+		console.log('second')
+		third()
+	}
+
+	function third() {
+		console.log('third')
+	}
+
+	function init() {
+		first()
+		console.log('init')
+	}
 </script>
