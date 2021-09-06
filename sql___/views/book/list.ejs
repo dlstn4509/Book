@@ -2,7 +2,7 @@
 <%- include('../inc/header.ejs') %>
 
 <div class="list-wrapper wrapper">
-  <%- include('../inc/book/title-bar.ejs', {title, description}) %>
+  <%- include('../inc/title-book.ejs', {title, description}) %>
   <table class="book-tbl table table-hover table-striped text-center">
     <thead class="thead-dark">
       <tr>
@@ -27,6 +27,7 @@
     <% } %> 
     </tbody>
   </table>
+  <%- include('../inc/pager.ejs') %>
 </div>
 
 

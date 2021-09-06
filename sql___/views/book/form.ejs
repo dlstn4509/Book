@@ -1,7 +1,7 @@
 <%- include('../inc/head.ejs', {css}) %> 
 <%- include('../inc/header.ejs') %>
 <div class="form-wrapper wrapper">
-  <%- include('../inc/book/title-bar.ejs', {title, description}) %> 
+  <%- include('../inc/title-book.ejs', {title, description}) %> 
   <form action="/book" method="POST" name="saveForm">
     <% if(book) { %> 
       <input type="hidden" name="_method" value="PUT">
