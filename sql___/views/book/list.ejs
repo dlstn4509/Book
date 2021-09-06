@@ -1,9 +1,9 @@
-<%- include('../inc/head.ejs') %> 
+<%- include('../inc/head.ejs', {css}) %> 
 <%- include('../inc/header.ejs') %>
 
 <div class="list-wrapper wrapper">
-  <%- include('../inc/book/title-bar.ejs', {title}) %>
-  <table class="table table-hover table-striped text-center">
+  <%- include('../inc/book/title-bar.ejs', {title, description}) %>
+  <table class="book-tbl table table-hover table-striped text-center">
     <thead class="thead-dark">
       <tr>
         <th>번호</th>
@@ -16,13 +16,13 @@
     </thead>
     <tbody>
     <% for(let book of books) { %> 
-      <tr>
+      <tr data-idx="<%= book.idx %>">
         <td><%= book.idx %> </td>
-        <td class="text-left"><%= book.title %> </td>
-        <td><%= book.writer || '미상' %> </td>
-        <td class="text-left"><%= cutTail(book.content) %> </td>
-        <td><%= moment(book.createdAt).format('YYYY-MM-DD') %> </td>
-        <td><%= chgStatus(book.status) %> </td>
+        <td class="text-left"><%= book.title %></td>
+        <td><%= book.writer %></td>
+        <td class="text-left"><%= book.content %></td>
+        <td><%= book.createdAt %></td>
+        <td><%= book.status %></td>
       </tr>
     <% } %> 
     </tbody>
@@ -30,4 +30,4 @@
 </div>
 
 
-<%- include('../inc/foot.ejs') %> 
+<%- include('../inc/foot.ejs', {js}) %> 

@@ -1,7 +1,7 @@
-<%- include('../inc/head.ejs') %> 
+<%- include('../inc/head.ejs', {css}) %> 
 <%- include('../inc/header.ejs') %>
 <div class="form-wrapper wrapper">
-  <%- include('../inc/book/title-bar.ejs') %> 
+  <%- include('../inc/book/title-bar.ejs', {title, description}) %> 
   <form action="/book/save" method="POST" name="saveForm">
     <table>
       <tbody>
@@ -38,4 +38,4 @@
   </form>
 </div> 
 
-<%- include('../inc/foot.ejs') %> 
+<%- include('../inc/foot.ejs', {js}) %> 

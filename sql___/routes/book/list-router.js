@@ -10,19 +10,20 @@ router.get('/', async (req, res, next) => {
     const sql = 'SELECT * FROM books ORDER BY idx DESC'
     const [rs] = await pool.execute(sql) // = [[a], [b]]  
     
+    const books = rs.map(v => {
+      v.createdAt = moment(v.createdAt).format('YYYY-MM-DD')
+      v.content = cutTail(v.content)
+      v.writer = v.writer || '미상'
+      v.status = chgStatus(v.status)
+      return v;
+    })    
+
+    const title =  '도서 목록'
+    const description =  '등록할 도서를 아래에서 입력하세요'
+    const js =  'book/list'
+    const css =  'book/list'
     
-    
-    const ejs = {
-      title: '도서 목록',
-      description: '등록할 도서를 아래에서 입력하세요',
-      js: null,
-      css: null,
-      books: rs,
-      moment,
-      cutTail,
-      chgStatus
-    }
-    res.status(200).render('book/list', ejs)
+    res.status(200).render('book/list', {title, description, js, css, books})
     // res.status(200).json(rs)
   }
   catch(err) {

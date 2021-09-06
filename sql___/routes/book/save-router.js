@@ -9,7 +9,6 @@ router.post('/', async (req, res, next) => {
     const sql = 'INSERT INTO books SET title=?, writer=?, content=?'
     const values = [title, writer, content]
     const [rs] = await pool.execute(sql, values)
-    console.log(rs)
     if(rs.affectedRows === 1) res.redirect('/book/list')
     else next(error(500, '데이터가 저장되지 않았습니다.'))
   }
