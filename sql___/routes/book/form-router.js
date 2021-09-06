@@ -11,5 +11,13 @@ router.get('/', (req, res, next) => {
   res.status(200).render('book/form.ejs', {title, description, js, css})
 })
 
+router.get('/:idx', (req, res, next) => {
+  const title = '도서 수정'
+  const description = '수정할 도서내용을 아래에서 변경하세요'
+  const js = 'book/form'
+  const css = 'book/form'
+  res.status(200).render('book/form.ejs', {title, description, js, css})
+})
+
 
 module.exports = router

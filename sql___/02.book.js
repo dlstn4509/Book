@@ -2,6 +2,8 @@
 const express = require('express')
 const path = require('path')
 const app = express()
+const methodInit = require('./modules/method-init')
+
 
 /****************************** sever init ******************/
 require('dotenv').config()
@@ -20,6 +22,7 @@ app.locals.tabTitle = 'Express 게시판'
 /****************************** middleware ********************/
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(methodInit())
 
 
 
