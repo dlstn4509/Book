@@ -8,7 +8,6 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 app.locals.pretty = true
 
-
 require('dotenv').config()
 require('./modules/server-init')(app, process.env.PORT)
 
