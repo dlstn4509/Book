@@ -13,6 +13,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.3",
     "mysql2": "^2.3.0",
+    "nodemon": "^2.0.12",
     "numeral": "^2.0.6",
     "passport": "^0.4.1",
     "sequelize": "^6.6.5",
@@ -22,7 +23,7 @@
   "version": "1.0.0",
   "main": "01.app.js",
   "scripts": {
-    "start": "nodemon 02.book",
+    "start": "nodemon 02.upload",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

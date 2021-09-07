@@ -8,14 +8,16 @@ const createPager = require('../../modules/pager-init')
 
 router.get(['/', '/:page'], async (req, res, next) => {
   try {
-    let sql = "SELECT COUNT(idx) FROM books"
+    let sql, values;
+
+    sql = "SELECT COUNT(idx) FROM books"
     const [[cnt]] = await pool.execute(sql)
     const totalRecord = cnt['COUNT(idx)']
-    const page = req.params.page || 1
+    const page = Number(req.params.page || 1)
     const pager = createPager(page, totalRecord, 2, 3)
     
     sql = 'SELECT * FROM books ORDER BY idx DESC LIMIT ?, ?'
-    const values = [pager.startIdx.toString(), pager.listCnt.toString()]
+    values = [pager.startIdx.toString(), pager.listCnt.toString()]
     const [rs] = await pool.execute(sql, values) 
     
     const books = rs.map(v => {
