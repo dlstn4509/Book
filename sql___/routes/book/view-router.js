@@ -14,7 +14,6 @@ router.get('/:idx',  async (req, res, next) => {
 					WHERE B.idx=?`
 		values = [req.params.idx]
 		const [[book]] = await pool.execute(sql, values)
-    console.log("🚀 ~ book", book)
 
 		book.createdAt = moment(book.createdAt).format('YYYY-MM-DD HH:mm:ss')
 		book.writer = book.writer || '미상'

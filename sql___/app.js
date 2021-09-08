@@ -28,7 +28,7 @@ app.use(methodInit())
 
 /***************************** static init ********************/
 app.use('/', express.static(path.join(__dirname, 'public')))
-app.use('/uploads', express.static(path.join(__dirname, 'stotages')))
+app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 
 
 
