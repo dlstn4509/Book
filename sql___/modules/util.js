@@ -44,7 +44,7 @@ const docExt = ['ppt', 'pptx', 'xls', 'xlsx', 'doc', 'docx', 'hwp', 'pdf']
 const zipExt = ['zip', 'alz']
 const exts = {imgExt, mediaExt, docExt, zipExt}
 
-const relPath = file => `/uploads${file.split('_')[0]}/${file}`
+const relPath = file => `/uploads/${file.split('_')[0]}/${file}`
 
 const getIcon = file => {
   const ext = path.extname(file).substr(1)

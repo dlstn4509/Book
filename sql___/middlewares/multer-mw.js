@@ -35,7 +35,7 @@ const fileFilter = (req, file, cb) => { // 파일 점검
 	try {
 		const ext = path.extname(file.originalname).substr(1).toLowerCase()
 		if(allowExt.includes(ext)) cb(null, true)
-		else cb(new Error(`첨부하신 파일은 업로드가 허용되지 않습니다 - ${ext}파일`))
+		else cb(new Error(`첨부하신 파일은 업로드가 허용되지 않습니다 - ${ext}파일`))		
 	}
 	catch(err) {
 		cb(err)
