@@ -5,7 +5,7 @@ const formRouter = require('./form-router')
 const createRouter = require('./create-router')
 const listRouter = require('./list-router')
 const viewRouter = require('./view-router')
-const downloadRouter = require('./update-router')
+const downloadRouter = require('./download-router')
 const deleteRouter = require('./delete-router')
 const updateRouter = require('./update-router')
 
