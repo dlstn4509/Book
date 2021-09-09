@@ -15,7 +15,7 @@ router.post('/', uploader.fields([{name: 'cover'}, {name: 'upfile'}]), async (re
     if(req.files) { // 첨부파일이 존재 한다면
       for(let [k, [v]] of Object.entries(req.files)) {
         let {originalname, filename, mimetype, size} = v
-        sql = 'INSERT INTO files SET fidx=?, oriname=?, savename=?, mimetype=?, size=?, filename=?'
+        sql = 'INSERT INTO files SET fidx=?, oriname=?, savename=?, mimetype=?, size=?, fieldname=?'
         values = [rs.insertId, originalname, filename, mimetype, size, k.substr(0, 1).toUpperCase()]
         await pool.execute(sql, values)
       }
