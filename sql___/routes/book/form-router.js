@@ -3,6 +3,7 @@ const express = require('express')
 const router = express.Router()
 const {error} = require('../../modules/util')
 const {pool} = require('../../modules/mysql-init')
+const {NO_EXIST} = require('../../modules/lang-init')
 
 router.get('/', (req, res, next) => {
   const title = '도서 등록'
@@ -15,15 +16,28 @@ router.get('/', (req, res, next) => {
 
 router.get('/:idx', async (req, res, next) => {
   try {
-    const sql = 'SELECT * FROM books WHERE idx=?'
+    const sql = `
+    SELECT B.*,
+    F.oriname AS ori, F.savename AS name, F.fieldname AS field, F.idx AS fid,
+    F2.oriname AS ori2, F2.savename AS name2, F2.fieldname AS field2, F2.idx AS fid2,
+    FROM books B
+    LEFT JOIN files F ON B.idx = F.fidx AND field = 'C'
+    LEFT JOIN files F2 ON B.idx = F2.fidx AND field2 = 'U'
+    WHERE B.idx=?
+    `
     const values = [req.params.idx]
     const [[book]] = await pool.execute(sql, values)
 
-    const title = '도서 수정'
-    const description = '수정할 도서내용을 아래에서 변경하세요'
-    const js = 'book/form'
-    const css = 'book/form'
-    res.status(200).render('book/form.ejs', {title, description, js, css, book})
+    if(book) {
+      const title = '도서 수정'
+      const description = '수정할 도서내용을 아래에서 변경하세요'
+      const js = 'book/form'
+      const css = 'book/form'
+      res.status(200).render('book/form.ejs', {title, description, js, css, book})
+    }
+    else {
+      
+    }
   }
   catch(err) {
     next(error(500, err))
