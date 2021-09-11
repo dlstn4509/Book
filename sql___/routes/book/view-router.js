@@ -18,7 +18,7 @@ router.get('/:idx',  async (req, res, next) => {
 		ON B.idx = F.fidx AND F.fieldname = 'C'
 		LEFT JOIN files F2 
 		ON B.idx = F2.fidx AND F2.fieldname = 'U'
-		WHERE B.status > '0'`
+		WHERE B.status > '0' AND b.idx=?`
 		values = [req.params.idx]
 		const [[book]] = await pool.execute(sql, values)
 
@@ -30,18 +30,15 @@ router.get('/:idx',  async (req, res, next) => {
 			book.upfile = book.savename2 ? relPath(book.savename2) : null
 			book.isImg = isImg(book.savename2 || '')
 		
-
-
 			const title = '도서 상세 정보'
 			const description = '선택하신 도서의 상세 정보 입니다.'
 			const css = 'book/view'
 			const js = 'book/view'
 
-		res.status(200).render('book/view', { title, description, css, js, book })
+			res.status(200).render('book/view', { title, description, css, js, book })
+		}
+		else next(error(400, "존재하지 않는 데이터 입니다."))
 	}
-	else {
-		next(error(400, "존재하지 않는 데이터 입니다."))
-	}}
 	catch(err) {
 		next(error(500, err))
 	}
