@@ -5,7 +5,7 @@ const router = express.Router()
 const {error, cutTail, chgStatus, getIcon, relPath} = require('../../modules/util')
 const {pool} = require('../../modules/mysql-init')
 const createPager = require('../../modules/pager-init')
-const {EPR_NOT_FOUND, TITLE_LIST, DESC_LIST} = require('../../modules/lang-init')('KO')
+const {EPR_NOT_FOUND, TITLE_LIST, DESC_LIST} = require('../../modules/lang-init')(process.env.MY_LANG)
 
 router.get(['/', '/:page'], async (req, res, next) => {
   let sql, values;
