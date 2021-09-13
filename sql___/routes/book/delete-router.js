@@ -21,7 +21,7 @@ router.delete('/', async (req, res, next) => {
 		for(let {savename} of rs) {
 			await moveFile(savename)
 		}
-		res.redirect('/book')
+		res.redirect(`/${req.lang}/book`)
 	}
 	catch(err) {
 		next(error(500, err))
