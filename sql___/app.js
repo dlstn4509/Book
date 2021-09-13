@@ -33,15 +33,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 
 
 /***************************** router init ********************/
+const langMW = require('./middlewares/lang-mw')
 const bookRouter = require('./routes/book')
-app.use(['/:param1', '/:param1/:param2'], (req, res, next) => {
-	const langs = ['ko', 'en']
-	if(langs.includes(req.params.param1)) {
-		process.env.MY_LANG = req.params.langs
-		next()
-	}
-	next()
-})
+
+app.use(langMW)
 app.use('/book', bookRouter)
 
 
