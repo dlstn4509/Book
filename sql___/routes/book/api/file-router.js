@@ -21,12 +21,11 @@ router.delete('/', async (req, res, next) => {
 		for(let {savename} of rs) {
 			await moveFile(savename)
 		}
+		res.status(200).json({code: 200, result: 'success'})
 	}
 	catch(err) {
-			res.status(500).json({err})
+		res.status(500).json({err})
 	}
-
-	res.status(200).json({code: 200, result: 'success'})
 })
 
 module.exports = router
