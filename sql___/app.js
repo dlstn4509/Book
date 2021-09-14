@@ -14,7 +14,7 @@ require('./modules/server-init')(app, process.env.PORT)
 app.set('view engine', 'ejs')
 app.set('views', './views')
 app.locals.pretty = true
-app.locals.tabTitle = 'Express 게시판'      
+app.locals.tabTitle = 'Express 게시판'
 // app.locals 에 등록한 변수는 view에서 접근 가능
 // (view에 모든값이 locals에 들어가 있다.)
 
