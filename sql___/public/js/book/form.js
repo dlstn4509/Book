@@ -18,9 +18,9 @@ document.querySelector('#btRemoveFile').addEventListener('click', onRemoveFile)
 
 function onRemoveFile(e) {
   var idx = this.dataset['idx'];
-  var lang = this.dataset['lang'];
   var parent = this.parentNode;
-  axios.delete('/' + lang +'/book/api/file', {params: {idx: idx}}).then(onSuccess).catch(onError)
+  var host = 'http://127.0.0.1:3001'
+  axios.delete(host + '/book/file/' + idx).then(onSuccess).catch(onError)
 
   function onSuccess(r) {
     if(r.data.code === 200) parent.remove()

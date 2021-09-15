@@ -20,10 +20,8 @@ router.get(['/', '/:page'], async (req, res, next) => {
 		SELECT 
 		B.*, F.savename AS cover, F2.savename AS icon 
 		FROM books B 
-		LEFT JOIN files F 
-		ON B.idx = F.fidx AND F.fieldname = 'C'
-		LEFT JOIN files F2 
-		ON B.idx = F2.fidx AND F2.fieldname = 'U'
+		LEFT JOIN files F ON B.idx = F.fidx AND F.fieldname = 'C' AND F.status > '0'
+		LEFT JOIN files F2 ON B.idx = F2.fidx AND F2.fieldname = 'U' AND F2.status > '0'
 		WHERE B.status > '0' 
 		ORDER BY B.idx DESC
 		LIMIT ?, ?`

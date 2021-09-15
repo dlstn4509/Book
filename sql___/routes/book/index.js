@@ -7,18 +7,14 @@ const listRouter = require('./list-router')
 const viewRouter = require('./view-router')
 const downloadRouter = require('./download-router')
 const deleteRouter = require('./delete-router')
-const deleteApiFileRouter = require('./api/file-router')
-
 
 router.post('/', saveRouter)           // FORM/POST: 저장, 수정 - FORM전송
 router.delete('/', deleteRouter)       // FORM/DELETE: 삭제 - FORM전송
-router.use('/api/file', deleteApiFileRouter)  // AJAX/DELETE: 파일 삭제
 router.use('/form', formRouter)        // HTML: 글작성 or 수정 페이지
 router.use('/view', viewRouter)        // HTML/GET: 상세페이지
 router.use('/download', downloadRouter)// HTML/GET: 첨부파일 다운로드
 router.use('/', listRouter)
                                        // HTML/GET: 리스트
-
 
 module.exports = router
 

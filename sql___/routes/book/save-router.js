@@ -6,13 +6,14 @@ const uploader = require('../../middlewares/multer-book-mw')
 
 router.post('/', uploader.fields([{name: 'cover'}, {name: 'upfile'}]), async (req, res, next) => {
   let sql, values
-  try {
-    const { title, writer, content, _method, idx } = req.body
-    sql = (_method === 'PUT' && idx) ? 'UPDATE books' : 'INSERT INTO books'
-    sql += ' SET title=?, writer=?, content=?'
-    sql += (_method === 'PUT' && idx) ? ' WHERE idx='+idx : ''
-    values = [title, writer, content]
-    const [rs] = await pool.execute(sql, values)
+	try {
+		const { title, writer, content, _method, idx } = req.body
+		const isUpdate = (_method === 'PUT' && idx)
+		sql = isUpdate ? 'UPDATE books' : 'INSERT INTO books'
+		sql += ' SET title=?, writer=?, content=? '
+		sql += isUpdate ? ' WHERE idx='+idx : ''
+		values = [title, writer, content]
+		const [rs] = await pool.execute(sql, values)
 
     /* if(req.files) { // 첨부파일이 존재 한다면
       for(let [k, [v]] of Object.entries(req.files)) {

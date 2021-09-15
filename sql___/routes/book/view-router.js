@@ -17,9 +17,9 @@ router.get('/:idx',  async (req, res, next) => {
 		F2.oriname AS oriname2, F2.savename AS savename2, F2.idx AS id2
 		FROM books B 
 		LEFT JOIN files F 
-		ON B.idx = F.fidx AND F.fieldname = 'C'
+		ON B.idx = F.fidx AND F.fieldname = 'C' AND F.status > '0'
 		LEFT JOIN files F2 
-		ON B.idx = F2.fidx AND F2.fieldname = 'U'
+		ON B.idx = F2.fidx AND F2.fieldname = 'U' AND F2.status > '0'
 		WHERE B.status > '0' AND b.idx=?`
 		values = [req.params.idx]
 		const [[book]] = await pool.execute(sql, values)
