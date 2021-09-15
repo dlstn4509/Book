@@ -1,0 +1,44 @@
+{
+	"cover": [{
+		"fieldname": "cover",
+		"originalname": "f3.jpg",
+		"encoding": "7bit",
+		"mimetype": "image/jpeg",
+		"destination": "D:\\cis\\My-SQL\\sql___\\storages\\210915",
+		"filename": "210915_ac6845db-703a-45bd-b6ab-853ff89dd58e.jpg",
+		"path": "D:\\cis\\My-SQL\\sql___\\storages\\210915\\210915_ac6845db-703a-45bd-b6ab-853ff89dd58e.jpg",
+		"size": 16129
+	}],
+	"upfile": [{
+		"fieldname": "upfile",
+		"originalname": "f4.jpg",
+		"encoding": "7bit",
+		"mimetype": "image/jpeg",
+		"destination": "D:\\cis\\My-SQL\\sql___\\storages\\210915",
+		"filename": "210915_ec12ce41-74ce-49bc-81ac-14b889d436ef.jpg",
+		"path": "D:\\cis\\My-SQL\\sql___\\storages\\210915\\210915_ec12ce41-74ce-49bc-81ac-14b889d436ef.jpg",
+		"size": 23245
+	}]
+}
+
+
+cover {
+  fieldname: 'cover',
+  originalname: 'f3.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'D:\\cis\\My-SQL\\sql___\\storages\\210915',
+  filename: '210915_98992f3a-f74d-4e4c-aff4-ddcc992e5f5e.jpg',
+  path: 'D:\\cis\\My-SQL\\sql___\\storages\\210915\\210915_98992f3a-f74d-4e4c-aff4-ddcc992e5f5e.jpg',
+  size: 16129
+}
+upfile {
+  fieldname: 'upfile',
+  originalname: 'f4.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'D:\\cis\\My-SQL\\sql___\\storages\\210915',
+  filename: '210915_1534fa7b-b063-4c5d-a71a-edf04cdf7d42.jpg',
+  path: 'D:\\cis\\My-SQL\\sql___\\storages\\210915\\210915_1534fa7b-b063-4c5d-a71a-edf04cdf7d42.jpg',
+  size: 23245
+}
