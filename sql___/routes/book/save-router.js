@@ -11,7 +11,7 @@
 
 const express = require('express')
 const router = express.Router()
-const {error} = require('../../modules/util')
+const {error, moveFile} = require('../../modules/util')
 const {pool} = require('../../modules/mysql-init')
 const uploader = require('../../middlewares/multer-book-mw')
 
@@ -40,8 +40,8 @@ router.post('/', uploader.fields([{name: 'cover'}, {name: 'upfile'}]), async (re
             await moveFile(rsf[0].savename)
           }
         }
-        sql = " INSERT INTO files oriname=?, savename=?, mimetype=?, size=?, fieldname=?, fidx=? "
-        values = [v.originalname, v.filename, v.mimetype, v.size, v.fieldname, (isUpdate ? idx : rs.insertId)]
+        sql = " INSERT INTO files SET oriname=?, savename=?, mimetype=?, size=?, fieldname=?, fidx=? "
+        values = [v.originalname, v.filename, v.mimetype, v.size, fieldname, (isUpdate ? idx : rs.insertId)]
         await pool.execute(sql, values)
       }
       res.redirect(`/${req.lang}/book`)
