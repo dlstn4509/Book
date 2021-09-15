@@ -27,11 +27,11 @@ router.post('/', uploader.fields([{name: 'cover'}, {name: 'upfile'}]), async (re
 		values = [title, writer, content]
 		const [rs] = await pool.execute(sql, values)
 
-    if(req.files) {
+    if(req.files) { // 파일이 있을때
       let fieldname;
       for(let [k, [v]] of Object.entries(req.files)) {
         fieldname = k.substr(0, 1).toUpperCase() // C or U
-        if(isUpdate) {
+        if(isUpdate) { // 수정일때
           sql = " SELECT idx, savename FROM files WHERE fidx=? AND fieldname=? AND status=? "
           values = [idx, fieldname, '1']
           let [rsf] = await pool.execute(sql, values)
