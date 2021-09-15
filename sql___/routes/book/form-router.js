@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
   const css = 'book/form'
   const book = null
   res.status(200).render('book/form.ejs', {title, description, js, css, book})
-})
+}) 
 
 router.get('/:idx', async (req, res, next) => {
 	req.app.locals.PAGE = 'UPDATE'
