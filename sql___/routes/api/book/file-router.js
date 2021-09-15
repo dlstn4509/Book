@@ -1,8 +1,8 @@
 const path = require('path')
 const express = require('express')
 const router = express.Router()
-const { error, moveFile } = require('../../../modules/util')
-const { pool } = require('../../../modules/mysql-init')
+const {moveFile} = require('../../../modules/util')
+const {pool} = require('../../../modules/mysql-init')
 
 router.delete('/:idx', async (req, res, next) => {
 	try {

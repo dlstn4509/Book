@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {error} = require('../../modules/util')
+const createError = require('http-errors')
 const {pool} = require('../../modules/mysql-init')
 
 router.post('/:idx', async (req, res, next) => {
@@ -11,10 +11,10 @@ router.post('/:idx', async (req, res, next) => {
     values = [title, writer, content, idx]
     const [rs] = await pool.execute(sql, values)
     if(rs.affectedRows === 1) res.redirect(`/${req.lang}/book`)
-    else next(error(500, '데이터가 수정되지 않았습니다.'))
+    else next(createError(500, '데이터가 수정되지 않았습니다.'))
   }
   catch(err) {
-    next(error(500, err))
+    next(createError(err))
   }
 })
 

@@ -11,8 +11,9 @@
 
 const express = require('express')
 const router = express.Router()
-const {error, moveFile} = require('../../modules/util')
+const {moveFile} = require('../../modules/util')
 const {pool} = require('../../modules/mysql-init')
+const createError = require('http-errors')
 const uploader = require('../../middlewares/multer-book-mw')
 
 router.post('/', uploader.fields([{name: 'cover'}, {name: 'upfile'}]), async (req, res, next) => {
@@ -46,28 +47,10 @@ router.post('/', uploader.fields([{name: 'cover'}, {name: 'upfile'}]), async (re
       }
       res.redirect(`/${req.lang}/book`)
     }
-
-/* 
-    if(req.files) { // 첨부파일이 존재 한다면
-      for(let [k, [v]] of Object.entries(req.files)) {
-        let {originalname, filename, mimetype, size} = v
-        sql = (_method === 'PUT' && idx) ? " UPDATE files " : " INSERT INTO files "
-        sql += " SET oriname=?, savename=?, mimetype=?, size=?, fieldname=? "
-
-        values = [rs.insertId, originalname, filename, mimetype, size, k.substr(0, 1).toUpperCase()]
-        await pool.execute(sql, values)
-      }
-    } */
-
-    // res.redirect(`/${req.lang}/book`)
   }
   catch(err) {
-    next(error(500, err))
+    next(createError(500, err))
   }
-})
-
-router.put('/', (req, res, next) => {
-  res.send('받음')
 })
 
 module.exports = router

@@ -1,7 +1,8 @@
 const path = require('path')
 const express = require('express')
+const createError = require('http-errors')
 const router = express.Router()
-const { error, absPath } = require('../../modules/util')
+const { absPath } = require('../../modules/util')
 const { pool } = require('../../modules/mysql-init')
 
 router.get('/:idx', async (req, res, next) => {
@@ -12,7 +13,7 @@ router.get('/:idx', async (req, res, next) => {
 		res.status(200).download(absPath(savename), oriname)
 	}
 	catch(err) {
-		next(error(err))
+		next(createError(err))
 	}
 })
 
