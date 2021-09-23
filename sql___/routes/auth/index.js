@@ -6,10 +6,10 @@ const { pool } = require('../../modules/mysql-init')
 
 const loginRouter = require('./login-router')
 const logoutRouter = require('./logout-router')
-const joinRouter = require('./join-router')
+const formRouter = require('./form-router')
 
 router.use('/login', loginRouter)
 router.use('/logout', logoutRouter)
-router.use('/join', joinRouter)
+router.use('/form', formRouter)
 
 module.exports = router

@@ -2,19 +2,23 @@
 <%- include('../inc/header.ejs') %>
 <script src="/0.BASE/axios.min.js"></script>
 <script src="/0.BASE/promise.polyfill.min.js"></script>
+<%- include('../inc/banner-book') %>
 <div class="form-wrapper wrapper">
-  <%- include('../inc/title-book.ejs') %>
+  <%- include('../inc/title-bar') %>
   <form action="/<%= LANG %>/book" method="POST" name="saveForm" enctype="multipart/form-data">
+    <% if(book) { %>
+			<input type="hidden" name="_method" value="PUT">
+			<input type="hidden" name="idx" value="<%= book.idx %>">
+		<% } %>
     <table>
       <tbody>
         <tr>
-          <td class="title require"><%= AUTH.TITLE %></td>
+          <td class="title require"><%= FIELD.TITLE %></td>
           <td class="content">
-            <!-- 아이디 -->
-            <input type="text" name="title" class="form-control" placeholder="<%= AUTH.TITLE %>>
-          </td>
-        </tr>
-        <tr>
+            <input type="text" name="title" class="form-control" placeholder="<%= FIELD.TITLE %>" autofocus value="<%= book ? book.title : '' %>">
+					</td>
+				</tr>
+				<tr>
           <td class="title"><%= FIELD.WRITER %></td>
           <td class="content">
             <input type="text" name="writer" class="form-control" placeholder="<%= FIELD.WRITER %>" value="<%= book ? book.writer : '' %>">

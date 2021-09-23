@@ -2,8 +2,9 @@
 <%- include('../inc/header.ejs') %>
 <script src="/0.BASE/axios.min.js"></script>
 <script src="/0.BASE/promise.polyfill.min.js"></script>
+<%- include('../inc/banner-auth') %>
 <div class="form-wrapper wrapper">
-  <%- include('../inc/title-book') %>
+  <%- include('../inc/title-bar') %>
   <form action="/<%= LANG %>/auth" method="POST" name="saveForm">
     <table>
       <tbody>
@@ -23,23 +24,23 @@
         </tr>
 				<!-- 패스워드 확인 -->
         <tr>
-          <td class="title"><%= AUTH.PASSWD2 %></td>
+          <td class="title require"><%= AUTH.PASSWD2 %></td>
           <td class="content">
             <input type="password" name="passwd2" class="form-control" placeholder="<%= AUTH.PASSWD2 %>">
           </td>
         </tr>
 				<!-- 사용자 이름 -->
         <tr>
-          <td class="title"><%= AUTH.USERNAME %></td>
+          <td class="title require"><%= AUTH.USERNAME %></td>
           <td class="content">
-            <input type="text" name="username" class="form-control" placeholder="<%= FIELD.USERNAME %>"></input>
+            <input type="text" name="username" class="form-control" placeholder="<%= AUTH.USERNAME %>"></input>
           </td>
         </tr>
 				<!-- email -->
         <tr>
-          <td class="title"><%= AUTH.EMAIL %></td>
+          <td class="title require"><%= AUTH.EMAIL %></td>
           <td class="content">
-            <input type="text" name="email" class="form-control" placeholder="<%= FIELD.EMAIL %>"></input>
+            <input type="text" name="email" class="form-control" placeholder="<%= AUTH.EMAIL %>"></input>
           </td>
         </tr>
       </tbody>
