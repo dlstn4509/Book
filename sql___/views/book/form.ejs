@@ -5,16 +5,13 @@
 <div class="form-wrapper wrapper">
   <%- include('../inc/title-book.ejs') %>
   <form action="/<%= LANG %>/book" method="POST" name="saveForm" enctype="multipart/form-data">
-    <% if(book) { %> 
-      <input type="hidden" name="_method" value="PUT">
-      <input type="hidden" name="idx" value="<%= book.idx %>">
-    <% } %> 
     <table>
       <tbody>
         <tr>
-          <td class="title require"><%= FIELD.TITLE %></td>
+          <td class="title require"><%= AUTH.TITLE %></td>
           <td class="content">
-            <input type="text" name="title" class="form-control" placeholder="<%= FIELD.TITLE %>" autofocus value="<%= book ? book.title : '' %>">
+            <!-- 아이디 -->
+            <input type="text" name="title" class="form-control" placeholder="<%= AUTH.TITLE %>>
           </td>
         </tr>
         <tr>
