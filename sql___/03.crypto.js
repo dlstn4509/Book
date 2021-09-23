@@ -58,9 +58,9 @@ passVerify2()
 
 const cipher = require('crypto-js')
 
-const encrypt = cipher.AES.encrypt('아버지를 아버지라...', salt).toString()
+const encrypt = cipher.AES.encrypt('아버지를 아버지라...', salt).toString() // 암호화
 console.log('encrypt : ' + encrypt)
 
-const decrypt  = cipher.AES.decrypt(encrypt, salt)
+const decrypt  = cipher.AES.decrypt(encrypt, salt) // 복호화
 const text = decrypt.toString(cipher.enc.Utf8);
 console.log('decrypt : ' + text)
