@@ -5,6 +5,7 @@
 	outline: unset;
 	box-shadow: unset;
 }
+.form-control.active, .form-control.active:focus {border-color: #4947f7;}
 .form-control.error, .form-control.error:focus {border-color: #f74462;}
 
 .form-wrapper {}
