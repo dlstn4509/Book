@@ -37,14 +37,38 @@ emailEl.addEventListener('blur', verifyEmail)
 
 function onSubmit(e) {
 	e.preventDefault();
-	var isUserid = verifyUserid()  //  verify 검증
-	var isPasswd = verifyPasswd()
+	var isPasswd = verifyPasswd()  //  verify 검증
 	var isPasswd2 = verifyPasswd2()
 	var isPasswdEqual = verifyPasswdEqual()
 	var isUsername = verifyUsername()
-	var isEmail = verifyEmail()
 
-	if(isUserid && isPasswd && isPasswd2 && isPasswdEqual && isUsername && isEmail) f.submit()
+	if(isPasswd && isPasswd2 && isPasswdEqual && isUsername) {
+		axios
+		.get('/api/auth/verify', {params: {key: 'userid', value: useridEl.value.trim()}})
+		// http://127.0.0.1:3001/api/auth/verify?key=userid&value=dlstn4509
+		.then(function(r) {
+			if(r.data.isUsed) {
+				return verifyFalse(useridEl, useridTxt, ERR.ID_TAKEN)
+			}
+			else {
+				verifyTrue(useridEl, useridTxt, ERR.ID_OK)
+				axios.get('/api/auth/verify', {params: {key: 'email', value: emailEl.value.trim()}})
+				.then(function(r) {
+					if(r.data.isUsed) return verifyFalse(emailEl, emailTxt, ERR.EMAIL_TAKEN)
+					else {
+						verifyTrue(emailEl, emailTxt);
+						f.submit();
+					}
+				})
+				.catch(function(err) {
+					return verifyFalse(useridEl, useridTxt, err.response.data.msg)
+				})
+			}
+		})
+		.catch(function(err) {
+			return verifyFalse(useridEl, useridTxt, err.response.data.msg)
+		})
+	}
 }
 
 function verifyUserid() {
@@ -60,14 +84,13 @@ function verifyUserid() {
 	else {
 		axios
 		.get('/api/auth/verify', {params: {key: 'userid', value: userid}})
-		// http://127.0.0.1:3001/api/auth/verify?key=userid&value=dlstn4509
 		.then(function(r) {
 			console.log(r)
 			if(r.data.isUsed) {
 				return verifyFalse(useridEl, useridTxt, ERR.ID_TAKEN)
 			}
 			else {
-				return verifyTrue(useridEl, useridTxt, ERR.ID_OK)
+				return validId = verifyTrue(useridEl, useridTxt, ERR.ID_OK)
 			}
 		})
 		.catch(function(err) {
@@ -146,7 +169,7 @@ function verifyEmail() {
 				return verifyFalse(emailEl, emailTxt, ERR.EMAIL_TAKEN)
 			}
 			else {
-				return verifyTrue(emailEl, emailTxt)
+				return validEmail = verifyTrue(emailEl, emailTxt)
 			}
 		})
 		.catch(function(err) {

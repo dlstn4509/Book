@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => { // join창 보여주기
 })
 
 router.post('/', (req, res, next) => { // 실제 join처리
-
+  res.json(req.body)
 })
 
 module.exports = router
