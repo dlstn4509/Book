@@ -52,7 +52,8 @@ function onSubmit(e) {
 			}
 			else {
 				verifyTrue(useridEl, useridTxt, ERR.ID_OK)
-				axios.get('/api/auth/verify', {params: {key: 'email', value: emailEl.value.trim()}})
+				axios
+				.get('/api/auth/verify', {params: {key: 'email', value: emailEl.value.trim()}})
 				.then(function(r) {
 					if(r.data.isUsed) return verifyFalse(emailEl, emailTxt, ERR.EMAIL_TAKEN)
 					else {
