@@ -2,6 +2,7 @@
 <%- include('../inc/header.ejs') %>
 <script src="/0.BASE/axios.min.js"></script>
 <script src="/0.BASE/promise.polyfill.min.js"></script>
+<script src="/0.BASE/validator.min.js"></script>
 <%- include('../inc/banner-auth') %>
 <div class="form-wrapper wrapper">
   <%- include('../inc/title-bar') %>
@@ -57,12 +58,13 @@
       <button class="btn btn-danger" type="reset"><%= BT.RESET %></button>
     </div>
   </form>
-</div> 
+</div>
 <script>
   var ERR = {
     ID_NULL			: "<%= ERROR.JOIN.ID_NULL %>",
     ID_LEN			: "<%= ERROR.JOIN.ID_LEN %>",
     ID_TAKEN		: "<%= ERROR.JOIN.ID_TAKEN %>",
+    ID_VALID		: "<%= ERROR.JOIN.ID_VALID %>",
     ID_OK				: "<%= ERROR.JOIN.ID_OK %>",
     PW_NULL			: "<%= ERROR.JOIN.PW_NULL %>",
     PW_LEN			: "<%= ERROR.JOIN.PW_LEN %>",
@@ -72,6 +74,7 @@
     NAME_NULL		:	"<%= ERROR.JOIN.NAME_NULL %>",
     EMAIL_NULL	:	"<%= ERROR.JOIN.EMAIL_NULL %>",
     EMAIL_TAKEN	:	"<%= ERROR.JOIN.EMAIL_TAKEN %>",
+    EMAIL_VALID	:	"<%= ERROR.JOIN.EMAIL_VALID %>",
   };
 </script>
 <%- include('../inc/foot', {js}) %> 
