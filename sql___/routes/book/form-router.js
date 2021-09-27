@@ -1,12 +1,13 @@
 const path = require('path')
 const express = require('express')
 const router = express.Router()
-const {relPath} = require('../../modules/util')
+const {relPath, alert} = require('../../modules/util')
 const createError = require('http-errors')
 const {pool} = require('../../modules/mysql-init')
 const {NO_EXIST} = require('../../modules/lang-init')
+const {isUser, isGuest} = require('../../middlewares/auth-mw')
 
-router.get('/', (req, res, next) => {
+router.get('/', isUser, (req, res, next) => {
 	req.app.locals.PAGE = 'CREATE'
   req.app.locals.js = 'book/form'
   req.app.locals.css = 'book/form'
@@ -14,7 +15,7 @@ router.get('/', (req, res, next) => {
   res.status(200).render('book/form')
 }) 
 
-router.get('/:idx', async (req, res, next) => {
+router.get('/:idx', isUser, async (req, res, next) => {
 	req.app.locals.PAGE = 'UPDATE'
 	req.app.locals.js = 'book/form'
   req.app.locals.css = 'book/form'

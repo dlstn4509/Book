@@ -4,8 +4,9 @@ const router = express.Router()
 const createError = require('http-errors')
 const {alert} = require('../../modules/util')
 const {createUser} = require('../../models/auth')
+const {isUser, isGuest} = require('../../middlewares/auth-mw')
 
-router.get('/', (req, res, next) => { // join창 보여주기
+router.get('/', isGuest, (req, res, next) => { // join창 보여주기
 	req.app.locals.PAGE = 'JOIN'
   req.app.locals.js = 'auth/form'
   req.app.locals.css = 'auth/form'

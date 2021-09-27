@@ -6,6 +6,7 @@ const app = express()
 const methodInit = require('./modules/method-init')
 const logger = require('./middlewares/morgan-mw')
 const session = require('./middlewares/session-mw')
+const locals = require('./middlewares/locals-mw')
 
 
 /****************************** sever init ******************/
@@ -26,6 +27,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(methodInit())
 app.use(session(app))
+app.use(locals)
 
 
 /***************************** static init ********************/
@@ -36,10 +38,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 /***************************** logger init *****************/
 app.use(logger)
 
-app.use((req, res, next) => {
-	res.locals.user = req.session.user || null
-	next();
-})
+
 
 /***************************** router init ********************/
 const langMW = require('./middlewares/lang-mw')

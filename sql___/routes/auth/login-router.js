@@ -4,15 +4,16 @@ const router = express.Router()
 const createError = require('http-errors')
 const { alert } = require('../../modules/util')
 const {loginUser} = require('../../models/auth')
+const { isGuest, isUser } = require('../../middlewares/auth-mw')
 
-router.get('/', async (req, res, next) => { // login창 보여주기
+router.get('/', isGuest, async (req, res, next) => { // login창 보여주기
 	req.app.locals.PAGE = 'LOGIN'
   req.app.locals.js = 'auth/login'
   req.app.locals.css = 'auth/login'
 	res.render('auth/login')
 })
 
-router.post('/', async (req, res, next) => { // 실제 login 로직
+router.post('/', isGuest, async (req, res, next) => { // 실제 login 로직
 	try {
 		const r = await loginUser(req.body)
 		if(r.success) {
