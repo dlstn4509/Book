@@ -14,7 +14,8 @@ router.get('/', async (req, res, next) => { // login창 보여주기
 
 router.post('/', async (req, res, next) => { // 실제 login 로직
 	try {
-		res.json(req.body)
+		const r = await loginUser(req.body)
+		res.json(r)
 	}
 	catch (err) {
 		next(createError(err))
