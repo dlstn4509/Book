@@ -28,14 +28,16 @@ app.use(methodInit())
 app.use(session(app))
 
 
-
 /***************************** static init ********************/
 app.use('/', express.static(path.join(__dirname, 'public')))
 app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 
 app.use(logger)
 
-
+app.use((req, res, next) => {
+	res.locals.user = req.session.user || null
+	next();
+})
 
 /***************************** router init ********************/
 const langMW = require('./middlewares/lang-mw')
