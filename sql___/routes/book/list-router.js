@@ -40,7 +40,7 @@ router.get(['/', '/:page'], async (req, res, next) => {
 		})
 		
 		
-		res.status(200).render('book/list', {books, pager })
+		res.status(200).render('book/list', {books, pager})
 	}
 	catch(err) {
 		next(createError(err))
