@@ -7,10 +7,10 @@ const {createUser} = require('../../models/auth')
 
 router.get('/', (req, res, next) => { // join창 보여주기
 	req.app.locals.PAGE = 'JOIN'
-  const js = 'auth/form'
-  const css = 'auth/form'
-  const info = null
-  res.status(200).render('auth/form', {js, css, info})
+  req.app.locals.js = 'auth/form'
+  req.app.locals.css = 'auth/form'
+  req.app.locals.info = null
+  res.status(200).render('auth/form')
 })
 
 router.post('/', async (req, res, next) => { // 실제 join처리

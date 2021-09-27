@@ -1,7 +1,7 @@
 const validator = require('validator')
 const bcrypt = require('bcrypt')
 const { pool } = require('../../modules/mysql-init')
-const { isUser, isEmail } = require('./verify-data')
+const { isVerify } = require('./find-user')
 
 const isValid = (user) => {
 	let {userid, passwd, passwd2, username, email} = user // req.body
@@ -29,8 +29,8 @@ module.exports = async (user) => {
   try { // 검증
     hashPasswd = await bcrypt.hash(passwd + salt, Number(round))
     if(isValid(user) !== true) return {success: false, msg: isValid(user).msg}
-    if(await isUser(userid)) return {success: false, msg: '아이디가 존재합니다.'}
-    if(await isEmail(email)) return {success: false, msg: '이메일이 존재합니다.'}
+    if(await isVerify('userid', userid)) return {success: false, msg: '아이디가 존재합니다.'}
+    if(await isVerify('email', email)) return {success: false, msg: '이메일이 존재합니다.'}
 
 		sql = `INSERT INTO users SET userid=?, passwd=?, username=?, email=?`
 		const [rs] = await pool.execute(sql, [userid, hashPasswd, username, email])
