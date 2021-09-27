@@ -15,9 +15,9 @@ const {moveFile} = require('../../modules/util')
 const {pool} = require('../../modules/mysql-init')
 const createError = require('http-errors')
 const uploader = require('../../middlewares/multer-book-mw')
-const { isUser } = require('../../middlewares/auth-mw')
+const { isUser, isMyBook } = require('../../middlewares/auth-mw')
 
-router.post('/', isUser, uploader.fields([{name: 'cover'}, {name: 'upfile'}]), async (req, res, next) => {
+router.post('/', isMyBook('body', 'U'), isUser, uploader.fields([{name: 'cover'}, {name: 'upfile'}]), async (req, res, next) => {
   let sql, values
 	try {
 		const {title, writer, content, _method, idx} = req.body
@@ -27,6 +27,7 @@ router.post('/', isUser, uploader.fields([{name: 'cover'}, {name: 'upfile'}]), a
 		sql += isUpdate ? " WHERE idx= "+idx : ""
 		values = [req.session.user.idx, title, writer, content]
 		const [rs] = await pool.execute(sql, values)
+    console.log(req.body)
 
   /*  const {title, writer, content, _method, idx} = req.body
 		const isUpdate = (_method === 'PUT' && idx)
