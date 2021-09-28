@@ -10,11 +10,11 @@
 		<li class="pager pager-prev">
 			<a href="/<%= LANG %>/book/<%= prevPage %>" class="material-icons">chevron_left</a>
 		</li>
-		<% for(let i=startPage; i<=endPage; i++) { %> 
+		<% for(let i=startPage; i<=endPage; i++) { %>
 			<li class="pager <%= page === i ? 'active' : '' %>">
 				<a href="/<%= LANG %>/book/<%= i %>"><%= i %></a>
 			</li>
-		<% } %> 
+		<% } %>
 		<li class="pager pager-next">
 			<a href="/<%= LANG %>/book/<%= nextPage %>" class="material-icons">chevron_right</a>
 		</li>

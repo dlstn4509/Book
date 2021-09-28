@@ -9,7 +9,7 @@ router.get('/verify', async (req, res, next) => {
 	// userid, email 중복 검증
 	try {
 		const isUsed = await isVerify(req.query.key, req.query.value)
-		res.status(200).json({isUsed})
+		res.status(200).json({ isUsed })
 	}
 	catch(err) {
 		next(createError(err))
@@ -17,7 +17,3 @@ router.get('/verify', async (req, res, next) => {
 })
 
 module.exports = router
-
-/* 
-http://127.0.0.1:3001/api/auth/verify?key=userid&value=dlstn4509
-*/

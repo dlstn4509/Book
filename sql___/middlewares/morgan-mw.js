@@ -8,5 +8,4 @@ const stream = rfs.createStream('access.log', {
 });
 
 const logger = morgan('combined', { stream });
-// const logger = morgan('tiny', { stream });
 module.exports = logger;

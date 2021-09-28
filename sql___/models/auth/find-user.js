@@ -15,47 +15,49 @@ pool.execute() => SELECT [[{ id: 1...},{ id: 2...},{ id: 3...}],{ field info }]
 const findUser = async (key, value) => {
 	let sql
 	try {
-		sql = `SELECT * FROM users WHERE ${key}=?`
+		sql = ` SELECT * FROM users WHERE ${key} = ? `
 		const [r] = await pool.execute(sql, [value])
-		return {success: true, user: r[0]}
+		return { success: true, user: r[0] }
 	}
-	catch (err) {
-		return {success: false, user: null, err}
+	catch(err) {
+		return { success: false, user: null, err }
 	}
 }
 
 const findAllUser = async (order = 'ASC') => {
 	let sql
 	try {
-		sql = `SELECT * FROM users WHERE ORDER BY idx ?`
+		sql = ` SELECT * FROM users ORDER BY id ? `
 		const [users] = await pool.execute(sql, [order])
-		return {success: true, users}
+		return { success: true, users }
 	}
-	catch (err) {
-		return {success: false, users: null, err}
+	catch(err) {
+		return { success: false, users: null, err }
 	}
 }
 
 const isVerify = async (key, value) => {
-	const sql = `SELECT * FROM users WHERE ${key}=?`
+	const sql = ` SELECT * FROM users WHERE ${key} = ? `
 	const [rs] = await pool.execute(sql, [value])
 	return rs.length ? true : false
 }
 
-const loginUser = async ({userid, passwd}) => {
+const loginUser = async (userid, passwd) => {
 	let sql, compare
 	try {
-		sql = `SELECT * FROM users WHERE userid=?`
+		sql = " SELECT * FROM users WHERE userid=? "
 		const [r] = await pool.execute(sql, [userid])
 		if(r.length === 1) {
 			compare = await bcrypt.compare(passwd + process.env.BCRYPT_SALT, r[0].passwd)
-			return compare ? {success: true, user: r[0], msg: '로그인 되었습니다.'} : {success: false, user: null, msg: '비밀번호가 일치하지 않습니다.'}
+			return compare 
+				? { success: true, user: r[0], msg: '로그인 되었습니다.' } 
+				: { success: false, user: null, msg: '비밀번호가 일치하지 않습니다.' }
 		}
-		else return {success: false, user: null, msg: '아이디가 일치하지 않습니다.'}
+		else return { success: false, user: null, msg: '아이디가 일치하지 않습니다.' }
 	}
-	catch (err) {
-		return {success: false, user: null, err: err}
+	catch(err) {
+		return { success: false, user: null, err: err }
 	}
 }
 
-module.exports = {findUser, findAllUser, isVerify, loginUser}
+module.exports = { findUser, findAllUser, isVerify, loginUser }

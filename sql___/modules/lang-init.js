@@ -5,21 +5,21 @@ module.exports = _lang => {
 			return {
 				ERROR: {
 					NOT_FOUND 		: '존재하지 않는 데이터 입니다.',
-					JOIN : {
+					JOIN: {
 						ID_NULL			: '아이디를 입력하세요.',
 						ID_LEN			: '아이디는 6자 이상 24자 이하 입니다.',
-						ID_VALID		: '아이디는 영문, 숫자로 구성되어야 합니다.',
-						ID_TAKEN		: '사용중인 아이디 입니다. 다른 아이디를 사용해 주세요.',
+						ID_VALID		: '아이디는 영문, 숫자로 구성되어야 합니다',
+						ID_TAKEN		: '사용중인 아이디 입니다. 다른 아이디를 사용해 주세요',
 						ID_OK				: '사용 가능한 아이디 입니다.',
 						PW_NULL			: '패스워드를 입력하세요.',
 						PW_LEN			: '패스워드는 6자 이상 24자 이하 입니다.',
-						PW2_NULL		: '패스워드를 재입력하세요.',
+						PW2_NULL		: '패스워드를 재 입력하세요.',
 						PW2_LEN			: '패스워드 재 입력은 6자 이상 24자 이하 입니다.',
-						PW_TAKEN		:	'패스워드가 일치하지 않습니다.',
-						NAME_NULL		:	'이름을 입력하세요.',
-						EMAIL_NULL	:	'이메일을 입력하세요.',
-						EMAIL_VALID	:	'이메일 형식이 올바르지 않습니다.',
-						EMAIL_TAKEN	:	'사용중인 이메일 입니다. 다른 아이디를 사용해 주세요.',
+						PW_TAKEN		: '패스워드가 일치하지 않습니다.',
+						NAME_NULL		: '이름을 입력하세요.',
+						EMAIL_NULL	: '이메일을 입력하세요.',
+						EMAIL_VALID	: '이메일 형식이 올바르지 않습니다.',
+						EMAIL_TAKEN	: '사용중인 이메일 입니다. 다른 이메일을 사용해 주세요',
 					}
 				},
 				GLOBAL: {
@@ -75,7 +75,7 @@ module.exports = _lang => {
 					LIST					: '리스트',
 					RESET					: '다시 등록',
 					JOIN					: '회원 가입',
-					LOGIN					: '로그인',
+					LOGIN					: '회원 로그인',
 				},
 				MSG: {
 					DELETE				: '정말로 삭제하시겠습니까?'
@@ -85,21 +85,21 @@ module.exports = _lang => {
 			return {
 				ERROR: {
 					NOT_FOUND 		: 'Data Not Found',
-					JOIN : {
+					JOIN: {
 						ID_NULL			: 'Please enter your ID',
 						ID_LEN			: 'ID must be between 6 and 24 characters',
 						ID_VALID		: 'ID must consist of letters and numbers',
-						ID_TAKEN		: 'ID in use. Please use a different ID.',
+						ID_TAKEN		: 'ID in use. Please use a different ID',
 						ID_OK				: 'Username is available',
 						PW_NULL			: 'Please enter your password',
-						PW_LEN			: 'Password must be between 6 and 24 characters.',
+						PW_LEN			: 'Password must be between 6 and 24 characters',
 						PW2_NULL		: 'Please re-enter your password',
-						PW2_LEN			: 'Re-entering the password must be between 6 and 24 characters.',
-						PW_TAKEN		:	'Passwords do not match',
-						NAME_NULL		:	'Please enter your name',
-						EMAIL_NULL	:	'Please enter your email',
-						EMAIL_VALID	:	'Email format is incorrect',
-						EMAIL_TAKEN	:	'This is the email you are using. Please use a different email',
+						PW2_LEN			: 'Re-entering the password must be between 6 and 24 characters',
+						PW_TAKEN		: 'Passwords do not match',
+						NAME_NULL		: 'Please enter your name',
+						EMAIL_NULL	: 'Please enter your email',
+						EMAIL_VALID	: 'Email format is incorrect',
+						EMAIL_TAKEN	: 'This is the email you are using. Please use a different email',
 					}
 				},
 				GLOBAL: {
@@ -129,7 +129,7 @@ module.exports = _lang => {
 				},
 				LOGIN: {
 					TITLE 				: 'Member Login',
-					DESC 					: 'Please enter your login information below',
+					DESC 					: 'Please enter your login information below.',
 				},
 				FIELD : {
 					NO						: 'No',
