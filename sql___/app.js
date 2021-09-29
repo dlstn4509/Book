@@ -35,15 +35,10 @@ app.use(method())
 app.use(session(app))
 
 
-/**************** passport ****************/
+/**************** passport ****************/ // 패스포트 세팅 무조건 넣음
 passportModule(passport)
 app.use(passport.initialize())
 app.use(passport.session())
-
-app.use((req, res, next) => {
-	console.log(req.user)
-	next()
-})
 
 
 /***************** locals *****************/

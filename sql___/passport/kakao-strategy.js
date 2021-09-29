@@ -1,6 +1,6 @@
 const KakaoStrategy = require('passport-kakao').Strategy
 // http://127.0.0.1:3001/auth/kakao/cb
-const {createSnsUser, existUser, findSnsUser} = require('../models/auth')
+const {createSnsUser, existUser} = require('../models/auth')
 
 const cb = async (accessToken, refreshToken, profile, done) => {
 	try {
