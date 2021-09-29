@@ -40,6 +40,11 @@ passportModule(passport)
 app.use(passport.initialize())
 app.use(passport.session())
 
+app.use((req, res, next) => {
+	console.log(req.user)
+	next()
+})
+
 
 /***************** locals *****************/
 app.use(locals)
