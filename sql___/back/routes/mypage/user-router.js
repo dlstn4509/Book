@@ -15,11 +15,9 @@ router.get('/', isUser, async (req, res, next) => {
 		req.app.locals.js = 'mypage/form'
 		req.app.locals.css = 'mypage/form'
 		const {success, user} = await findUser('idx', req.user.idx)
+		console.log(user)
 		if(success) res.render('mypage/form', {...user})
 		else res.send(alert('회원 아님'))
-
-		// res.json(req.app.locals)
-		// res.json(req.user.idx)
 	}
 	catch (err) {
 		next(createError(err))

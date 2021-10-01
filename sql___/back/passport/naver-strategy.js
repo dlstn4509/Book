@@ -4,11 +4,14 @@ const {createSnsUser, existUser} = require('../models/auth')
 
 const cb = async (accessToken, refreshToken, profile, done) => {
 	try {
+		/* 
 		console.log('-------------------------')
 		console.log(accessToken)
 		console.log(refreshToken)
 		console.log(profile)
 		console.log('-------------------------')
+		*/
+		console.log(profile.displayName)
 
 		let user = {userid: profile.id, accessToken}
 		let userSns = {
@@ -21,7 +24,7 @@ const cb = async (accessToken, refreshToken, profile, done) => {
 			prifileURL: profile._json.profile_image || null,
 			email: profile._json.email || null,
 		}
-
+		console.log(profile)
 		let {success, idx} = await existUser('userid', user.userid)
 		if(success) {
 			user.idx = idx
