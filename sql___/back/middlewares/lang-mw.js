@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
 	}
 	req.lang = lang || 'ko'
 	req.app.locals = { 
-		...req.app.locals, 
+		...req.app.locals,
 		...require('../modules/lang-init')(req.lang), 
 		LANG: req.lang 
 	}

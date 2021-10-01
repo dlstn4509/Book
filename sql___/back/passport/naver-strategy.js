@@ -11,7 +11,6 @@ const cb = async (accessToken, refreshToken, profile, done) => {
 		console.log(profile)
 		console.log('-------------------------')
 		*/
-		console.log(profile.displayName)
 
 		let user = {userid: profile.id, accessToken}
 		let userSns = {

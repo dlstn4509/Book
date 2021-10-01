@@ -4,8 +4,7 @@ const router = express.Router()
 const createError = require('http-errors')
 const { isUser } = require('../../middlewares/auth-mw')
 const { alert } = require('../../modules/util')
-const { findUser } = require('../../models/auth')
-const { json } = require('express')
+const { findUser, updateUser } = require('../../models/auth')
 
 // 회원정보 보여주기 		GET : /mypage/user 
 router.get('/', isUser, async (req, res, next) => {
@@ -24,8 +23,15 @@ router.get('/', isUser, async (req, res, next) => {
 	}
 })
 // 회원정보 수정 				POST : /mypage/user
-router.post('/', async (req, res, next) => {
-
+router.post('/', updateUser, async (req, res, next) => {
+	try {
+		const r = await createUser(req.body)
+		if(r.success) res.redirect('/')
+		else res.send(alert(ERROR.SQL_ERROR))
+	}
+	catch(err) {
+		next(createError(err))
+	}
 })
 // api키 발행		 				POST : /mypage/user/api
 router.post('/api', async (req, res, next) => {

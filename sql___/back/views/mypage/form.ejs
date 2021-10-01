@@ -7,6 +7,7 @@
 <div class="form-wrapper wrapper">
 	<%- include('../inc/title-bar') %> 
 	<form action="/<%= LANG %>/mypage/user" method="POST" name="saveForm">
+		<input type="hidden" name="idx" value="<%= idx %>">
 		<table>
 			<tbody>
 				<% if(provider) { %> 
