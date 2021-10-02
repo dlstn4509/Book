@@ -14,7 +14,6 @@ router.get('/', isUser, async (req, res, next) => {
 		req.app.locals.js = 'mypage/form'
 		req.app.locals.css = 'mypage/form'
 		const {success, user} = await findUser('idx', req.user.idx)
-		console.log(user)
 		if(success) res.render('mypage/form', {...user})
 		else res.send(alert('회원 아님'))
 	}
@@ -23,10 +22,11 @@ router.get('/', isUser, async (req, res, next) => {
 	}
 })
 // 회원정보 수정 				POST : /mypage/user
-router.post('/', updateUser, async (req, res, next) => {
+router.post('/', async (req, res, next) => {
 	try {
-		const r = await createUser(req.body)
-		if(r.success) res.redirect('/')
+		const {ERROR} = req.app.locals
+		const r = await updateUser(req.body)
+		if(r) res.redirect('/')
 		else res.send(alert(ERROR.SQL_ERROR))
 	}
 	catch(err) {
