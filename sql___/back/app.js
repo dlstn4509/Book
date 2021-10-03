@@ -52,10 +52,10 @@ app.use(logger)
 /*************** router init **************/
 const bookRouter = require('./routes/book')
 const apiBookRouter = require('./routes/api/book')
-const apiMypageRouter = require('./routes/api/mypage')
 const authRouter = require('./routes/auth')
 const apiAuthRouter = require('./routes/api/auth')
 const mypageRouter = require('./routes/mypage')
+const apiMypageRouter = require('./routes/api/mypage')
 
 app.use(langMW)
 app.use('/book', bookRouter)
