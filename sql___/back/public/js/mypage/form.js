@@ -162,7 +162,7 @@ function verifyTrue(el, elTxt, msg) {
 }
 
 function onApikey() {
-	var idx = f2.idx.value;
+	var idx = f2.idx.value; // <input type="hidden" name="idx" value="<%= idx %>">
 	axios.get('/api/mypage/key/'+idx)
 	.then(function(r) {
 		if(r.data.code === 200) apikeyEl.value = r.data.apikey;
