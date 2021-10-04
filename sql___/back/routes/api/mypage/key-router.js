@@ -5,7 +5,6 @@ const { updateKey } = require('../../../models/auth')
 router.get('/:idx', async (req, res, next) => {
 	try {
 		let { ERROR } = req.app.locals
-		console.log(req.app.locals)
 		let { success, apikey } = await updateKey(req.params.idx)
 		if(success) res.status(200).json({ code: 200, apikey })
 		else res.status(500).json(ERROR.SQL_ERROR)
