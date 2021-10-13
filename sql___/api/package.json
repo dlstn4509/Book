@@ -18,32 +18,20 @@
     "multer": "^1.4.3",
     "mysql2": "^2.3.0",
     "numeral": "^2.0.6",
-    "passport": "^0.4.1",
-    "passport-kakao": "^1.0.1",
-    "passport-local": "^1.0.0",
-    "passport-naver": "^1.0.6",
     "rotating-file-stream": "^2.1.6",
     "sequelize": "^6.6.5",
     "uuid": "^8.3.2",
     "validator": "^13.6.0"
   },
-  "name": "15.sql",
+  "name": "api",
   "version": "1.0.0",
-  "main": "01.app.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/booldook/2021-sc-app-15-sql.git"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/booldook/2021-sc-app-15-sql/issues"
-  },
-  "homepage": "https://github.com/booldook/2021-sc-app-15-sql#readme",
-  "description": ""
+  "license": "ISC"
 }

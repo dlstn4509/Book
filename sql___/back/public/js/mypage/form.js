@@ -165,14 +165,16 @@ function verifyTrue(el, elTxt, msg) {
 }
 
 function onApikey() {
-	axios.get('/api/mypage/key/')
-	.then(function(r) {
-		if(r.data.code === 200) apikeyEl.value = r.data.apikey;
-		else console.log(r);
-	})
-	.catch(function(err) {
-		console.log(err);
-	})
+	if(confirm('APIkey를 변경하면 바로 적용됩니다. \n적용 후에는 되돌릴 수 없습니다')) {
+		axios.get('/api/mypage/key/')
+		.then(function(r) {
+			if(r.data.code === 200) apikeyEl.value = r.data.apikey;
+			else console.log(r);
+		})
+		.catch(function(err) {
+			console.log(err);
+		})
+	}
 }
 
 // var f2 = document.apiForm

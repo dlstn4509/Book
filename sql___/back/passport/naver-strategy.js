@@ -23,7 +23,6 @@ const cb = async (accessToken, refreshToken, profile, done) => {
 			prifileURL: profile._json.profile_image || null,
 			email: profile._json.email || null,
 		}
-		console.log(profile)
 		let {success, idx} = await existUser('userid', user.userid)
 		if(success) {
 			user.idx = idx
