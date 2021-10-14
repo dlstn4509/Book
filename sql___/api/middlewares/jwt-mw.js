@@ -21,17 +21,36 @@
 */
 
 const jwt = require('jsonwebtoken')
+const createError = require('http-errors')
+const { pool } = require('../modules/mysql-init')
+const { findApiUser } = require('../models/auth')
 
 const isApiUser = async (req, res, next) => {
+  const errMsg = 'Authorization Fail'
   try {
     const domain = req.protocol + '://' + req.headers.host
-    // http://127.0.0.1:3100
     const apikey = req.query.apikey
-    // http://127.0.0.1:3100/book?apikey=62f45e12-ffcb-4af7-8705-af5c71db9193
-    next()
+
+    if (req.cookies.token) {
+
+    }
+    else if (domain && apikey) {
+      const { success } = await findApiUser(domain, apikey)
+      if (success) {
+        const token = jwt.sign({ domain, apikey }, process.env.JWT_SALT, { expiresIn: '5s' })
+        res.cookie('token', token, { expires: new Date(Date.now() + 5000) })
+        next()
+      }
+      else {
+        next(createError(401, errMsg))
+      }
+    }
+    else {
+      next(createError(401, errMsg))
+    }
   }
   catch (err) {
-    
+    next(createError(err))
   }
 }
 
