@@ -47,7 +47,6 @@ const isApiUser = async (req, res, next) => {
     else if (domain && apikey) {
       const { success } = await findApiUser(domain, apikey)
       if (success) {
-        console.log('처음접근/재발행')
         createCookie(domain, apikey, res)
         next()
       }
