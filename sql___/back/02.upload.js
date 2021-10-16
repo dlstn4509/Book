@@ -3,7 +3,7 @@ const app = express()
 const path = require('path')
 const uploader = require('./middlewares/multer-mw')
 
-/****************************** view engine *******************/
+/****************************** view engine  *******************/
 app.set('view engine', 'ejs')
 app.set('views', './views')
 app.locals.pretty = true
