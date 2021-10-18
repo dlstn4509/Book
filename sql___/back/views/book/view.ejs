@@ -50,7 +50,7 @@
 	</table>
 	<% if (user && user.idx === book.fidx) { %>
 		<div class="btn-wrap py-3 d-flex">
-			<a href="/<%= LANG %>/book" class="btn btn-primary"><%= BT.LIST %></a>
+			<a href="javascript: history.go(-1);" class="btn btn-primary"><%= BT.LIST %></a>
 				<button class="btn btn-success ml-auto mr-1" id="btUpdate" data-idx="<%= book.idx %>" data-lang="<%= LANG %>"><%= BT.UPDATE %></button>
 				<button class="btn btn-danger" id="btDelete" data-msg="<%= MSG.DELETE %>"><%= BT.DELETE %></button>
 		</div>
@@ -60,7 +60,8 @@
 		</form>
 	<% } else { %>
 		<div class="btn-wrap py-3 d-flex justify-content-center">
-			<a href="/<%= LANG %>/book" class="btn btn-primary"><%= BT.LIST %></a>
+			<!-- <a href="/<%= LANG %>/book" class="btn btn-primary"><%= BT.LIST %></a> -->
+			<a href="javascript: history.go(-1);" class="btn btn-primary"><%= BT.LIST %></a>
 		</div>
 	<% } %>
 </div>
