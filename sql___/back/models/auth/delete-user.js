@@ -18,6 +18,7 @@ const deleteUser = async (user) => {
       }
       else return { success: false }
     }
+    
     else { // 일반 회원 처리
       const { success } = await findPasswd(idx, passwd)
       if(success) {

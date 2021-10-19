@@ -3,7 +3,7 @@
 module.exports = { 
 	...require('./create-user'),
 	...require('./update-user'),
+	...require('./delete-user'),
 	...require('./find-user'),
 	...require('./update-key'),
-	...require('./delete-user'),
 }
