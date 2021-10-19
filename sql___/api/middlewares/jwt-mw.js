@@ -35,8 +35,6 @@ const isApiUser = async (req, res, next) => {
     const domain = req.headers.origin || req.protocol + '://' + req.headers.host
     const apikey = req.query.apikey
 
-    console.log(domain)
-
     if (req.cookies.token) {
       const token = jwt.verify(req.cookies.token, process.env.JWT_SALT)
       if(domain === token.domain && apikey === token.apikey) {

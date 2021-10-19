@@ -4,7 +4,6 @@ const naver = require('./naver-strategy')
 const { findUser } = require('../models/auth')
 
 const serialize = (user, done) => {
-	console.log(user)
 	// 카카오, 네이버 등등 공통사항 (최초 로그인)
 	// 브라우저 쿠키에 idx 남김
 	done(null, user.idx)
