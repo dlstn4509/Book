@@ -1,6 +1,6 @@
 const NaverStrategy = require('passport-naver').Strategy
 // http://127.0.0.1:3001/auth/kakao/cb
-const {createSnsUser, existUser, changeUser} = require('../models/auth')
+const {createSnsUser, existUser, changeUser, findUser} = require('../models/auth')
 
 const cb = async (accessToken, refreshToken, profile, done) => {
 	try {
@@ -24,17 +24,26 @@ const cb = async (accessToken, refreshToken, profile, done) => {
 			email: profile._json.email || null,
 		}
 		
-		let {success, idx, status} = await existUser('userid', user.userid)
+		let { success, user: _user } = await findUser('userid', user.userid)
+		const { idx, status } = _user
 		if(success) {
 			if(status === '0') {
-				const { success } = await changeUser(idx, { status: '3' })
-				const { success: success2 } = await changeUser(idx, { status: '3' }, 'users_sns')
+				const { success } = await changeUser(
+					{ status: '3' },
+					{ idx },
+					'users'
+				);
+				const { success: success2 } = await changeUser(
+					{ status: '3' },
+					{ 'fidx': idx },
+					'users_sns'
+				);
 				if(success && success2) user.idx = idx
 				else done('Error')
 			}
 		}
 		else {
-			let {idx: id} = await changeUser(user, userSns)
+			let { idx: id } = await createSnsUser(user, userSns)
 			user.idx = id
 		}
 		done(null, user)
