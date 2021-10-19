@@ -57,6 +57,7 @@ const findAllUser = async (order = 'ASC') => {
 	}
 }
 // GET : field, value를 통한 회원 존재 여부
+// 아이디 중복 확인
 const existUser = async (key, value) => {
 	try {
 		const sql = ` SELECT * FROM users WHERE ${key} = ? `
@@ -71,7 +72,7 @@ const existUser = async (key, value) => {
 const loginUser = async (userid, passwd) => {
 	let sql, compare
 	try {
-		sql = " SELECT * FROM users WHERE userid=? "
+		sql = " SELECT * FROM users WHERE userid=? AND status > 0 "
 		const [r] = await pool.execute(sql, [userid])
 		if(r.length === 1) {
 			compare = await bcrypt.compare(passwd + process.env.BCRYPT_SALT, r[0].passwd)
