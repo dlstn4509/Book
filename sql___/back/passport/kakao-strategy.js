@@ -24,8 +24,8 @@ const cb = async (accessToken, refreshToken, profile, done) => {
 		}
 
 		let { success, user: _user } = await findUser('userid', user.userid)
-		const { idx, status } = _user
 		if(success) {
+			const { idx, status } = _user
 			if(status === '0') {
 				const { success } = await changeUser(
 					{ status: '3' },
@@ -40,20 +40,7 @@ const cb = async (accessToken, refreshToken, profile, done) => {
 				if(success && success2) user.idx = idx
 				else done('Error')
 			}
-			else {
-				const { success } = await changeUser(
-					{ status: '3' },
-					{ idx },
-					'users'
-				);
-				const { success: success2 } = await changeUser(
-					{ status: '3' },
-					{ 'fidx': idx },
-					'users_sns'
-				);
-				if(success && success2) user.idx = idx
-				else done('Error')
-			}
+			else user.idx = idx
 		}
 		else {
 			let {idx: id} = await createSnsUser(user, userSns)

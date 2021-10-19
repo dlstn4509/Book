@@ -31,8 +31,8 @@ const findUser = async (key, value) => {
 		ON U.idx = S.fidx
 		LEFT JOIN users_api AS A
 		ON U.idx = A.fidx
-		WHERE U.${key} = ?`
-		const [r] = await pool.execute(sql, [value])
+		WHERE U.${key} = '${value}' `
+		const [r] = await pool.execute(sql)
 		if(r.length === 1) {
 			r[0].domain = r[0].domain ? r[0].domain.split(',').join('\r\n') : ''
 			return { success: true, user: r[0] }
