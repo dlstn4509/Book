@@ -22,7 +22,12 @@ module.exports = _lang => {
 						EMAIL_NULL	: '이메일을 입력하세요.',
 						EMAIL_VALID	: '이메일 형식이 올바르지 않습니다.',
 						EMAIL_TAKEN	: '사용중인 이메일 입니다. 다른 이메일을 사용해 주세요',
+						MSG_NULL		: '탈퇴 사유를 작성해 주세요',
 					}
+				},
+				ALERT: {
+					WITHDRAWAL		: '회원 탈퇴가 처리되었습니다.',
+					SNS_MSG				: 'sns 회원은 탈퇴 후 다시 로그인 하시면 재가입 됩니다.',
 				},
 				GLOBAL: {
 					LOGO					: '도서관리시스템',
@@ -73,6 +78,7 @@ module.exports = _lang => {
 					PASSWD2				: '패스워드 확인',
 					USERNAME			: '이름',
 					EMAIL					: '이메일',
+					MSG						: '회원 탈퇴 사유',
 				},
 				MYPAGE : {
 					TITLE 				: '회원 정보 수정',
@@ -100,7 +106,7 @@ module.exports = _lang => {
 					APIKEY				: '인증키 생성/변경',
 				},
 				MSG: {
-					DELETE				: '정말로 삭제하시겠습니까?'
+					DELETE				: '정말로 삭제하시겠습니까?',
 				}
 			}
 		case 'EN': 
@@ -124,7 +130,12 @@ module.exports = _lang => {
 						EMAIL_NULL	: 'Please enter your email',
 						EMAIL_VALID	: 'Email format is incorrect',
 						EMAIL_TAKEN	: 'This is the email you are using. Please use a different email',
+						MSG_NULL		: 'Please write the reason for withdrawal',
 					}
+				},
+				ALERT: {
+					WITHDRAWAL		: 'Membership cancellation has been processed',
+					SNS_MSG				: 'If you log in again after withdrawing from SNS, you can rejoin.',
 				},
 				GLOBAL: {
 					LOGO					: 'BOOK MANAGEMENT SYSTEM',
@@ -175,6 +186,7 @@ module.exports = _lang => {
 					PASSWD2				: 'Password confirm',
 					USERNAME			: 'User name',
 					EMAIL					: 'Email',
+					MSG						: 'Reason for withdrawal',
 				},
 				MYPAGE : {
 					TITLE 				: 'User Information Update',
