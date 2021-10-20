@@ -3,7 +3,7 @@ const { pool } = require('../../modules/mysql-init')
 const { existUser, findPasswd } = require('./find-user')
 const isValid = require('./is-valid')
 
-const deleteUser = async (user) => {  
+const deleteUser = async (user) => {    
   let sql, allow = false;
   try {
     const { idx, passwd, msg, status } = user
