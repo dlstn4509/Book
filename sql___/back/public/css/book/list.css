@@ -10,3 +10,21 @@
 .book-tbl .cover-td {padding: .25em 0; vertical-align: middle;}
 .book-tbl .content-td .icon {width: 24px;}
 .book-tbl .cover-td .cover {max-width: 28px; max-height: 28px;}
+
+@media screen and (max-width: 1399px) {
+
+}
+@media screen and (max-width: 1199px) {
+
+}
+@media screen and (max-width: 991px) {
+  .book-tbl th:nth-child(5) {display: none;}
+  .book-tbl td:nth-child(5) {display: none;}
+}
+@media screen and (max-width: 767px) {
+  .book-tbl th:nth-child(4) {display: none;}
+  .book-tbl td:nth-child(4) {display: none;}
+}
+@media screen and (max-width: 575px) {
+  
+}

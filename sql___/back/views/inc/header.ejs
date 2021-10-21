@@ -1,24 +1,27 @@
 <header class="header-wrapper">
 	<h1 class="logo"><a href="/<%= LANG %>/book"><%= GLOBAL.LOGO %></a></h1>
-	<nav class="navi-wrap">
-		<a href="/<%= LANG %>/book" class="navi"><%= GLOBAL.NAVI[1] %></a>
-		<% if(user) { %>
-		<a href="/<%= LANG %>/book/form" class="navi"><%= GLOBAL.NAVI[0] %></a>
-		<div class="navi bt-navi">
-			<%= GLOBAL.NAVI[5] %>
-			<div class="navi-sub">
-				<a href="/<%= LANG %>/mypage/user" class="sub"><%= GLOBAL.NAVI[6] %></a>
-				<a href="/<%= LANG %>/auth/logout" class="sub"><%= GLOBAL.NAVI[3] %></a>
-				<a href="/<%= LANG %>/auth/withdrawal" class="sub"><%= GLOBAL.NAVI[8] %></a>
+	<div class="mobile-wrap">
+		<i class="fa fa-bars navi"></i>
+		<nav class="navi-wrap">
+			<a href="/<%= LANG %>/book" class="navi"><%= GLOBAL.NAVI[1] %></a>
+			<% if(user) { %>
+			<a href="/<%= LANG %>/book/form" class="navi"><%= GLOBAL.NAVI[0] %></a>
+			<div class="navi bt-navi">
+				<%= GLOBAL.NAVI[5] %>
+				<div class="navi-sub">
+					<a href="/<%= LANG %>/mypage/user" class="sub"><%= GLOBAL.NAVI[6] %></a>
+					<a href="/<%= LANG %>/auth/logout" class="sub"><%= GLOBAL.NAVI[3] %></a>
+					<a href="/<%= LANG %>/auth/withdrawal" class="sub"><%= GLOBAL.NAVI[8] %></a>
+				</div>
 			</div>
-		</div>
-		<!-- <a href="/<%= LANG %>/auth/logout" class="navi"><%= GLOBAL.NAVI[3] %></a> -->
-		<% } else { %>
-		<a href="/<%= LANG %>/auth/login" class="navi"><%= GLOBAL.NAVI[2] %></a>
-		<a href="/<%= LANG %>/auth/form" class="navi"><%= GLOBAL.NAVI[4] %></a>
-		<% } %>
-		<a href="https://dabanbus-book.firebaseapp.com/" class="navi ex"><%= GLOBAL.NAVI[7] %></a>
-	</nav>
+			<!-- <a href="/<%= LANG %>/auth/logout" class="navi"><%= GLOBAL.NAVI[3] %></a> -->
+			<% } else { %>
+			<a href="/<%= LANG %>/auth/login" class="navi"><%= GLOBAL.NAVI[2] %></a>
+			<a href="/<%= LANG %>/auth/form" class="navi"><%= GLOBAL.NAVI[4] %></a>
+			<% } %>
+			<a href="https://dabanbus-book.firebaseapp.com/" class="navi ex"><%= GLOBAL.NAVI[7] %></a>
+		</nav>
+	</div>
 	<nav class="lang-wrap">
 		<a href="javascript:chgLang('ko');" class="navi <%= (LANG === 'ko' ? 'active': '') %>">한국어</a>
 		<span> | </span>
