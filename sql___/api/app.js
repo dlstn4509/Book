@@ -4,9 +4,14 @@ const express = require('express')
 const app = express()
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
+const helmet = require('helmet')
 
 /*************** server init **************/
 require('./modules/server-init')(app, process.env.PORT)
+
+
+/*************** helmet init **************/
+app.use(helmet({ contentSecurityPolicy: false }));
 
 
 /*************** middleware ***************/

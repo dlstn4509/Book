@@ -5,6 +5,7 @@ const app = express()
 const path = require('path')
 const passport = require('passport')
 const passportModule = require('./passport')
+const helmet = require('helmet');
 
 const method = require('./middlewares/method-mw')
 const logger = require('./middlewares/morgan-mw')
@@ -15,6 +16,10 @@ const langMW = require('./middlewares/lang-mw')
 
 /*************** server init **************/
 require('./modules/server-init')(app, process.env.PORT)
+
+
+/*************** helmet init **************/
+app.use(helmet({ contentSecurityPolicy: false }));
 
 
 /*************** static init **************/
