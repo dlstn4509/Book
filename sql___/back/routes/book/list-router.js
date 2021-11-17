@@ -14,7 +14,7 @@ router.get(['/', '/:page'], async (req, res, next) => {
   try {
     const { count: totalRecord } = await findBookCount();
     const page = Number(req.params.page || 1);
-    const pager = createPager(page, totalRecord, 5, 3);
+    const pager = createPager(page, totalRecord, 10, 5);
     const { books } = await findBooks(
       pager.startIdx.toString(),
       pager.listCnt.toString()
