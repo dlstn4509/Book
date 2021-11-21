@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>최인수</title>
+	<link rel="stylesheet" href="../public/css/all.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
+	<link rel="stylesheet" href="../public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../public/css/base.css">
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/js/moment.min.js"></script>
+	<script src="../public/js/lodash.min.js"></script>
+	<script src="../public/js/util.js"></script>
+</head>
+<body>
+  <div class="navi-wrapper">
+    <div class="navi-wrap">
+      <div class="navi">HOME</div>
+      <div class="navi">ABOUT</div>
+      <div class="navi">PORTFOLIO</div>
+      <div class="navi">BLOG</div>
+      <div class="navi">CONTACT</div>
+    </div>
+  </div>
+  <div class="portfolio">
+    <div class="wrapper1 main">
+      <div class="main-title">
+        <div class="title">뭐시기</div>
+        <div class="title">뭐시기</div>
+      </div>
+    </div>
+    <div class="wrapper2 about">
+      <div class="title">ABOUT</div>
+      <div class="abil">
+        <div>Fast</div>
+        <div>Responsive</div>
+        <div>Intuitive</div>
+        <div>Dynamic</div>
+      </div>
+    </div>
+    <div class="wrapper wrapper3">
+      <div class="title">도서관리 시스템</div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">메인 페이지</div><br>
+          <div class="sub-text">
+            1. 내림차순 정렬로 최신글이 상단에 위치하도록 설정<br><br>
+            2. 글 작성 form에서 표지, 첨부파일 유무에 따라<br>리스트에서 아이콘으로 확인 가능 <br>(thumbnail은 표지 이미지)<br><br>
+            3. pager를 통해 page간 이동 구현
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_erd.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">Database ERD</div><br>
+          <div class="sub-text">
+            users 테이블을 중심으로 books(게시글)와 1:多<br><br>
+            users(1) : users_sns(多) / CASCADE<br><br>
+            users(1) : users_withdrawal(多) / CASCADE<br><br>
+            books(1) : files(多) / CASCADE 구현
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_auth.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">회원가입</div><br>
+          <div class="sub-text">
+            1. 아이디 검증(특수문자 사용 불가, 중복 불가) 구현<br><br>
+            2. 패스워드 1차, 2차 매치 검증 구현<br><br>
+            3. 형식에 맞지 않는 이메일 또는 중복 검증 구현
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_auth_login.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">로그인</div><br>
+          <div class="sub-text">
+            1. 로그인 시 DB상 아이디와 패스워드 일치 여부 확인<br><br>
+            2. passport 모듈사용하여 카카오, 네이버 로그인 구현<br><br>
+            (로그인 시 users_sns 테이블에 정보 저장)<br><br>
+            
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_form.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">도서 등록(게시글 등록)</div><br>
+          <div class="sub-text">
+            1. 제목, 저자, 요약설명과 첨부파일 등록 구현<br><br>
+            2. multer, fs-extra 모듈을 사용하여 첨부파일은<br><br>
+            루트상 storages 폴더에서 관리<br><br>
+            (삭제 시 storages-remove 폴더로 파일 이동)
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_dependencies.png" class="w-100">
+        </div>
+        <div class="explain">
+          이것 또한 존나 잘 만들었음<br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, perspiciatis modi laborum delectus esse molestias illum eligendi dicta quidem reiciendis a magnam, sapiente omnis assumenda eveniet, ipsa saepe porro iure?
+        </div>
+      </div>
+      <div class="link-wrap">
+        <a href="https://www.dabanbus.kr/book" target="_blank">바로가기</a>
+      </div>
+    </div>
+    <div class="wrapper wrapper4">
+      <div class="title">VUE 도서관리 시스템</div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          존나 잘 만들었음<br>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus repellendus animi ad, id fugit dolorem expedita quae tempore perferendis aut soluta aliquid, quas sequi necessitatibus earum ipsa dicta numquam impedit.
+        </div>
+      </div>
+    </div>
+    <div class="wrapper5"></div>
+  </div>
+  <script src="../public/js/index.js"></script>
+</body>
+</html>
