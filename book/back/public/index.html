@@ -1,1 +1,388 @@
-<meta http-equiv="refresh" content="0; url=/book">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>최인수</title>
+	<link rel="stylesheet" href="../public/css/all.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
+	<link rel="stylesheet" href="../public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../public/css/base.css">
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/js/moment.min.js"></script>
+	<script src="../public/js/lodash.min.js"></script>
+	<script src="../public/js/util.js"></script>
+</head>
+<body>
+  <div class="navi-wrapper">
+    <div class="navi-wrap">
+      <div class="navi navi1">HOME</div>
+      <div class="navi navi2">ABOUT</div>
+      <div class="navi navi3">PORTFOLIO</div>
+      <div class="navi navi4">CONTACT</div>
+    </div>
+  </div>
+  <div class="portfolio">
+    <div class="wrapper1 main">
+      <div class="main-title">
+        <div class="title">최인수의 포트폴리오<i class="fa fa-star"></i></div>
+      </div>
+    </div>
+    <div class="wrapper wrapper2">
+      <div class="title">ABOUT</div>
+      <div class="about">
+        <div>이름 : 최인수</div>
+        <div>생년월일 : 1992. 02. 07</div>
+        <div>전화번호 : 010 - 4011 - 8741</div>
+      </div>
+    </div>
+    <div class="title">PORTFOLIO</div>
+    <div class="wrapper wrapper3">
+      <div class="sub-title">1. MySql 도서관리 시스템</div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">메인 페이지</div><br>
+          <div class="sub-text">
+            1. 내림차순 정렬로 최신글이 상단에 위치하도록 설정<br><br>
+            2. 글 작성 form에서 표지, 첨부파일 유무에 따라<br>리스트에서 아이콘으로 확인 가능 <br>(thumbnail은 표지 이미지)<br><br>
+            3. pager를 통해 page간 이동 구현<br><br>
+            4. AWS통해 배포
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_erd.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">Database ERD</div><br>
+          <div class="sub-text">
+            users 테이블을 중심으로 books(게시글)와 1:多<br><br>
+            users(1) : users_sns(多) / CASCADE<br><br>
+            users(1) : users_withdrawal(多) / CASCADE<br><br>
+            books(1) : files(多) / CASCADE 구현
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_auth.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">회원가입</div><br>
+          <div class="sub-text">
+            1. 아이디 검증(특수문자 사용 불가, 중복 불가) 구현<br><br>
+            2. 패스워드 1차, 2차 매치 검증 구현<br><br>
+            3. 형식에 맞지 않는 이메일 또는 중복 검증 구현
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_auth_login.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">로그인</div><br>
+          <div class="sub-text">
+            1. 로그인 시 DB상 아이디와 패스워드 일치 여부 확인<br><br>
+            2. passport 모듈사용하여 카카오, 네이버 로그인 구현<br><br>
+            (로그인 시 users_sns 테이블에 정보 저장)<br><br>
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_form.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">도서 등록(게시글 등록)</div><br>
+          <div class="sub-text">
+            1. 제목, 저자, 요약설명과 첨부파일 등록 구현<br><br>
+            2. multer, fs-extra 모듈을 사용하여 첨부파일은<br><br>
+            루트상 storages 폴더에서 관리<br><br>
+            (삭제 시 storages-remove 폴더로 파일 이동)
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_auth_update.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">회원 정보 수정</div><br>
+          <div class="sub-text">
+            1. 회원가입과 동일하게 패스워드 검증 구현<br><br>
+            2. 인증 플랫폼 등록 후 인증키 발급시 API키 발급<br><br>
+            3. API키를 이용해 데이터 사용 가능 (json객체 전송)<br>
+            (Vue 도서 관리 시스템에서 사용)
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_lang.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">영문 버전</div><br>
+          <div class="sub-text">
+            1. en 또는 ko로 params 전달 시 한글, 영문판 구현<br><br>
+            2. req.originalUrl.split('/')하여 구분<br><br>
+            3. 한개의 ejs파일에서 변수로 전달
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_auth_exit.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">회원 탈퇴</div><br>
+          <div class="sub-text">
+            1. 회원 탈퇴시 사유를 기재하도록 하여 users_withdrawal DB에 저장<br><br>
+            2. 실제 운용시 마케팅, 활용방안 등을 위한 목적<br><br>
+            3. 본인 확인을 위해 패스워드 검증
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_dependencies.png" class="w-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">dependencies</div><br>
+          <div class="sub-text">
+            1. bcrypt : 패스워드 저장시 암호화<br>
+            2. cors : 교차 출처 리소스 공유 (모든 권한 승인)<br>
+            3. fs-extra : 첨부파일 경로 지정, 저장, 이동<br>
+            4. helmet : 보안 모듈<br>
+            5. method-override : HTML에서 PUT, DELETE 구현<br>
+            6. morgan : log 저장<br>
+            7. multer : 첨부파일 저장 enctype="multipart/form-data"<br>
+            8. numeral : 날짜 등 표기법 지정<br>
+            9. passport : 로그인 시 req.user에 로그인 정보 저장
+          </div>
+        </div>
+      </div>
+      <div class="link-wrap">
+        <a href="https://www.dabanbus.kr/book" class="mr-5" target="_blank">
+          <div class="mr-2">사이트 바로가기</div>
+          <i class="fab fa-chrome"></i>
+        </a>
+        <a href="https://github.com/dlstn4509/Book" target="_blank">
+          <div class="mr-2">깃허브</div>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="wrapper wrapper4">
+      <div class="sub-title">2. Vue로 만든 도서 관리 시스템</div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_vue_list.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">메인 페이지</div><br>
+          <div class="sub-text">
+            1. 도서 관리 시스템 api키, vue로 만든 사이트<br><br>
+            2. pager를 이용한 페이지 이동<br><br>
+            3. firebase 통해 배포
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_vue_infinite.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">무한 스크롤 페이지</div><br>
+          <div class="sub-text">
+            1. pager를 없에고 window.scrollY 이벤트를 이용해 스크롤시 DB 호출<br><br>
+            2. Infinite Scroll 구현<br><br>
+            3. 데이터 요청시 vue-observe-visibility 사용하여 로딩바 구현<br><br>
+            4. 표지파일 등록 시 썸네일 이미지 구현
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_vue_api.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">api를 통해 데이터 전송</div><br>
+          <div class="sub-text">
+            1. 등록한 도메인에서 query로 apikey를 이용해 호출시 <br>DB에 저장된 데이터 전송, 수신
+          </div>
+        </div>
+      </div>
+      <div class="link-wrap">
+        <a href="https://dabanbus-book.firebaseapp.com/" class="mr-5" target="_blank">
+          <div class="mr-2">사이트 바로가기</div>
+          <i class="fab fa-chrome"></i>
+        </a>
+        <a href="https://github.com/dlstn4509/Vue/tree/hoc/vue-book" target="_blank">
+          <div class="mr-2">깃허브</div>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="wrapper wrapper5">
+      <div class="sub-title">3. 카카오 API로 만든 검색창</div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/kakao_search.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">메인 페이지</div><br>
+          <div class="sub-text">
+            1. 웹사이트, 블로그, 이미지, 동영상, 도서, 카페 검색 기능 구현<br><br>
+            2. 이미지 클릭시 모달창 구현<br>
+            일부 사이트(네이버 블로그 등) 원본 이미지 데이터 제공 안하는곳은 <br>썸네일 이미지로 대체<br><br>
+            3. firebase 통해 배포
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/kakao_search_mobile.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">반응형 페이지</div><br>
+          <div class="sub-text">
+            1. 크기에 따른 반응형 페이지 구현<br><br>
+          </div>
+        </div>
+      </div>
+      <div class="link-wrap">
+        <a href="https://dabanbus-search.firebaseapp.com/html/02.search.html" class="mr-5" target="_blank">
+          <div class="mr-2">사이트 바로가기</div>
+          <i class="fab fa-chrome"></i>
+        </a>
+        <a href="https://github.com/dlstn4509/HTML-CSS-JS/tree/master/firebase/ajax" target="_blank">
+          <div class="mr-2">깃허브</div>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="wrapper wrapper6">
+      <div class="sub-title">4. vue, OpenWeatherMap API로 만든 검색창</div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/weather_vue.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">메인 페이지</div><br>
+          <div class="sub-text">
+            1. 접속한 사용자의 Latitude와 Longitude를 기반으로 위치 날씨 제공<br><br>
+            2. navigator.geolocation 사용하여 동의 후 지리 정보 접근 사용<br><br>
+            3. firebase 배포
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/weather_vue_5days.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">5일간 날씨 정보</div><br>
+          <div class="sub-text">
+            1. 선택한 위치에 5일간 시간대별 날씨 정보 제공<br><br>
+            2. api 연동으로 실시간 데이터 요청
+          </div>
+        </div>
+      </div>
+      <div class="link-wrap">
+        <a href="https://dabanbus-vue--weather.firebaseapp.com/" class="mr-5" target="_blank">
+          <div class="mr-2">사이트 바로가기</div>
+          <i class="fab fa-chrome"></i>
+        </a>
+        <a href="https://github.com/dlstn4509/Vue/tree/master/vue-weather" target="_blank">
+          <div class="mr-2">깃허브</div>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="wrapper wrapper7">
+      <div class="sub-title">5. Sequelize 쇼핑몰 관리자 페이지 (구현중)</div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/shop_erd.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">Database ERD</div><br>
+          <div class="sub-text">
+            1. board 테이블 중심으로 관계설정<br><br>
+            2. product 테이블 중심으로 cate, productFile 관계 설정
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/shop_user.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">회원 관리 페이지</div><br>
+          <div class="sub-text">
+            1. 전체 회원에 대한 정보 관리<br><br>
+            2. 회원 구분을 통해 일반, 관리자 등록 구현<br><br>
+            3. 필드(아이디, 이름, 이메일, 전화번호 주소)를 이용해 검색 구현
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/shop_prd.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">상품 관리 페이지</div><br>
+          <div class="sub-text">
+            1. 전체 회원에 대한 정보 관리<br><br>
+            2. 회원 구분을 통해 일반, 관리자 등록 구현<br><br>
+            3. 필드(아이디, 이름, 이메일, 전화번호 주소)를 이용해 검색 구현
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/shop_cate.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">카테고리 관리 페이지</div><br>
+          <div class="sub-text">
+            1. jstree 사용하여 카테고리 구현<br><br>
+            2. 우클릭을 이용해 생성, 삭제 구현<br><br>
+            3. 다중 카테고리시 활용가능한 검색 바 구현
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/shop_board_init.png" class="mw-100">
+        </div>
+        <div class="img-wrap">
+          <img src="./img/shop_board_default.png" class="mw-100">
+          <img src="./img/shop_board_gallery.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">게시판 관리 페이지</div><br>
+          <div class="sub-text">
+            1. 게시판 타입 생성 구현(글게시판, 이미지게시판)<br><br>
+            2. 게시판 타입 내에서 게시판 생성, 수정, 삭제 구현<br><br>
+          </div>
+        </div>
+      </div>
+      <div class="link-wrap">
+      <a href="https://github.com/dlstn4509/Shop" target="_blank">
+        <div class="mr-2">깃허브</div>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    </div>
+  </div>
+  <script src="../public/js/index.js"></script>
+</body>
+</html>
