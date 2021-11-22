@@ -42,7 +42,8 @@
 						<% if(book.isImg) { %> 
 							<img src="<%= book.upfile %>" alt="<%= FIELD.UPFILE %>" class="book-img">
 						<% } %>
-						<a href="/<%= LANG %>/book/download/<%= book.id2 %>" class="my-2 d-block"><%= book.oriname2 || '' %></a>
+						<a href="/<%= LANG %>/book/download/<%= book.id2 %>" class="my-2 d-block"><%= book.oriname2 || '' %></a><br>
+						<span style="color: red;">↑첨부파일 클릭시 다운로드 가능합니다.</span>
 					</td>
 				</tr>
 			<% } %>
