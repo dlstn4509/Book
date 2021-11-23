@@ -27,7 +27,23 @@
   <div class="portfolio">
     <div class="wrapper1 main">
       <div class="main-title">
-        <div class="title">최인수의 포트폴리오<i class="fa fa-star"></i></div>
+        <div class="title">
+          최인수의 포트폴리오
+          <i class="fa fa-star"></i>
+        </div>
+      </div>
+      <div class="menu hide">
+        <div onClick="moveHome()"><span>HOME</span></div>
+        <div onClick="moveAbout()"><span>ABOUT</span></div>
+        <div><span>PORTFOLIO</span>
+          <i class="fa fa-arrow-right"></i>
+          <i class="fa fa-arrow-down hide"></i>
+        </div>
+        <div class="sub-menu sub-menu1"><span>1. MySql 도서관리 시스템</span></div>
+        <div class="sub-menu sub-menu2"><span>2. Sequelize 쇼핑몰 관리자 페이지 (구현중)</span></div>
+        <div class="sub-menu sub-menu3"><span>3. Vue로 만든 도서 관리 시스템</span></div>
+        <div class="sub-menu sub-menu4"><span>4. 카카오 API로 만든 검색창</span></div>
+        <div class="sub-menu sub-menu5"><span>5. vue, OpenWeatherMap API로 만든 검색창</span></div>
       </div>
     </div>
     <div class="wrapper wrapper2">
@@ -37,8 +53,8 @@
         <div>생년월일 : 1992. 02. 07</div>
         <div>전화번호 : 010 - 4011 - 8741</div>
       </div>
+      <div class="title title-last">PORTFOLIO</div>
     </div>
-    <div class="title">PORTFOLIO</div>
     <div class="wrapper wrapper3">
       <div class="sub-title">1. MySql 도서관리 시스템</div>
       <div class="wrap">
@@ -179,135 +195,8 @@
         </a>
       </div>
     </div>
-    <div class="wrapper wrapper4">
-      <div class="sub-title">2. Vue로 만든 도서 관리 시스템</div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_vue_list.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">메인 페이지</div><br>
-          <div class="sub-text">
-            1. 도서 관리 시스템 api키, vue로 만든 사이트<br><br>
-            2. pager를 이용한 페이지 이동<br><br>
-            3. firebase 통해 배포
-          </div>
-        </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_vue_infinite.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">무한 스크롤 페이지</div><br>
-          <div class="sub-text">
-            1. pager를 없에고 window.scrollY 이벤트를 이용해 스크롤시 DB 호출<br><br>
-            2. Infinite Scroll 구현<br><br>
-            3. 데이터 요청시 vue-observe-visibility 사용하여 로딩바 구현<br><br>
-            4. 표지파일 등록 시 썸네일 이미지 구현
-          </div>
-        </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_vue_api.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">api를 통해 데이터 전송</div><br>
-          <div class="sub-text">
-            1. 등록한 도메인에서 query로 apikey를 이용해 호출시 <br>DB에 저장된 데이터 전송, 수신
-          </div>
-        </div>
-      </div>
-      <div class="link-wrap">
-        <a href="https://dabanbus-book.firebaseapp.com/" class="mr-5" target="_blank">
-          <div class="mr-2">사이트 바로가기</div>
-          <i class="fab fa-chrome"></i>
-        </a>
-        <a href="https://github.com/dlstn4509/Vue/tree/hoc/vue-book" target="_blank">
-          <div class="mr-2">깃허브</div>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-    </div>
-    <div class="wrapper wrapper5">
-      <div class="sub-title">3. 카카오 API로 만든 검색창</div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/kakao_search.png" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">메인 페이지</div><br>
-          <div class="sub-text">
-            1. 웹사이트, 블로그, 이미지, 동영상, 도서, 카페 검색 기능 구현<br><br>
-            2. 이미지 클릭시 모달창 구현<br>
-            일부 사이트(네이버 블로그 등) 원본 이미지 데이터 제공 안하는곳은 <br>썸네일 이미지로 대체<br><br>
-            3. firebase 통해 배포
-          </div>
-        </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/kakao_search_mobile.png" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">반응형 페이지</div><br>
-          <div class="sub-text">
-            1. 크기에 따른 반응형 페이지 구현<br><br>
-          </div>
-        </div>
-      </div>
-      <div class="link-wrap">
-        <a href="https://dabanbus-search.firebaseapp.com/html/02.search.html" class="mr-5" target="_blank">
-          <div class="mr-2">사이트 바로가기</div>
-          <i class="fab fa-chrome"></i>
-        </a>
-        <a href="https://github.com/dlstn4509/HTML-CSS-JS/tree/master/firebase/ajax" target="_blank">
-          <div class="mr-2">깃허브</div>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-    </div>
-    <div class="wrapper wrapper6">
-      <div class="sub-title">4. vue, OpenWeatherMap API로 만든 검색창</div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/weather_vue.png" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">메인 페이지</div><br>
-          <div class="sub-text">
-            1. 접속한 사용자의 Latitude와 Longitude를 기반으로 위치 날씨 제공<br><br>
-            2. navigator.geolocation 사용하여 동의 후 지리 정보 접근 사용<br><br>
-            3. firebase 배포
-          </div>
-        </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/weather_vue_5days.png" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">5일간 날씨 정보</div><br>
-          <div class="sub-text">
-            1. 선택한 위치에 5일간 시간대별 날씨 정보 제공<br><br>
-            2. api 연동으로 실시간 데이터 요청
-          </div>
-        </div>
-      </div>
-      <div class="link-wrap">
-        <a href="https://dabanbus-vue--weather.firebaseapp.com/" class="mr-5" target="_blank">
-          <div class="mr-2">사이트 바로가기</div>
-          <i class="fab fa-chrome"></i>
-        </a>
-        <a href="https://github.com/dlstn4509/Vue/tree/master/vue-weather" target="_blank">
-          <div class="mr-2">깃허브</div>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-    </div>
     <div class="wrapper wrapper7">
-      <div class="sub-title">5. Sequelize 쇼핑몰 관리자 페이지 (구현중)</div>
+      <div class="sub-title">2. Sequelize 쇼핑몰 관리자 페이지 (구현중)</div>
       <div class="wrap">
         <div class="img-wrap">
           <img src="./img/shop_erd.png" class="mw-100">
@@ -376,11 +265,138 @@
         </div>
       </div>
       <div class="link-wrap">
-      <a href="https://github.com/dlstn4509/Shop" target="_blank">
-        <div class="mr-2">깃허브</div>
-        <i class="fab fa-github"></i>
-      </a>
+        <a href="https://github.com/dlstn4509/Shop" target="_blank">
+          <div class="mr-2">깃허브</div>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
     </div>
+    <div class="wrapper wrapper4">
+      <div class="sub-title">3. Vue로 만든 도서 관리 시스템</div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_vue_list.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">메인 페이지</div><br>
+          <div class="sub-text">
+            1. 도서 관리 시스템 api키, vue로 만든 사이트<br><br>
+            2. pager를 이용한 페이지 이동<br><br>
+            3. firebase 통해 배포
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_vue_infinite.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">무한 스크롤 페이지</div><br>
+          <div class="sub-text">
+            1. pager를 없에고 window.scrollY 이벤트를 이용해 스크롤시 DB 호출<br><br>
+            2. Infinite Scroll 구현<br><br>
+            3. 데이터 요청시 vue-observe-visibility 사용하여 로딩바 구현<br><br>
+            4. 표지파일 등록 시 썸네일 이미지 구현
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/book_vue_api.PNG" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">api를 통해 데이터 전송</div><br>
+          <div class="sub-text">
+            1. 등록한 도메인에서 query로 apikey를 이용해 호출시 <br>DB에 저장된 데이터 전송, 수신
+          </div>
+        </div>
+      </div>
+      <div class="link-wrap">
+        <a href="https://dabanbus-book.firebaseapp.com/" class="mr-5" target="_blank">
+          <div class="mr-2">사이트 바로가기</div>
+          <i class="fab fa-chrome"></i>
+        </a>
+        <a href="https://github.com/dlstn4509/Vue/tree/hoc/vue-book" target="_blank">
+          <div class="mr-2">깃허브</div>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="wrapper wrapper5">
+      <div class="sub-title">4. 카카오 API로 만든 검색창</div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/kakao_search.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">메인 페이지</div><br>
+          <div class="sub-text">
+            1. 웹사이트, 블로그, 이미지, 동영상, 도서, 카페 검색 기능 구현<br><br>
+            2. 이미지 클릭시 모달창 구현<br>
+            일부 사이트(네이버 블로그 등) 원본 이미지 데이터 제공 안하는곳은 <br>썸네일 이미지로 대체<br><br>
+            3. firebase 통해 배포
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/kakao_search_mobile.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">반응형 페이지</div><br>
+          <div class="sub-text">
+            1. 크기에 따른 반응형 페이지 구현<br><br>
+          </div>
+        </div>
+      </div>
+      <div class="link-wrap">
+        <a href="https://dabanbus-search.firebaseapp.com/html/02.search.html" class="mr-5" target="_blank">
+          <div class="mr-2">사이트 바로가기</div>
+          <i class="fab fa-chrome"></i>
+        </a>
+        <a href="https://github.com/dlstn4509/HTML-CSS-JS/tree/master/firebase/ajax" target="_blank">
+          <div class="mr-2">깃허브</div>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="wrapper wrapper6">
+      <div class="sub-title">5. vue, OpenWeatherMap API로 만든 검색창</div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/weather_vue.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">메인 페이지</div><br>
+          <div class="sub-text">
+            1. 접속한 사용자의 Latitude와 Longitude를 기반으로 위치 날씨 제공<br><br>
+            2. navigator.geolocation 사용하여 동의 후 지리 정보 접근 사용<br><br>
+            3. firebase 배포
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="img-wrap">
+          <img src="./img/weather_vue_5days.png" class="mw-100">
+        </div>
+        <div class="explain">
+          <div class="main-text">5일간 날씨 정보</div><br>
+          <div class="sub-text">
+            1. 선택한 위치에 5일간 시간대별 날씨 정보 제공<br><br>
+            2. api 연동으로 실시간 데이터 요청
+          </div>
+        </div>
+      </div>
+      <div class="link-wrap">
+        <a href="https://dabanbus-vue--weather.firebaseapp.com/" class="mr-5" target="_blank">
+          <div class="mr-2">사이트 바로가기</div>
+          <i class="fab fa-chrome"></i>
+        </a>
+        <a href="https://github.com/dlstn4509/Vue/tree/master/vue-weather" target="_blank">
+          <div class="mr-2">깃허브</div>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
     </div>
   </div>
   <script src="/js/index.js"></script>

@@ -4,8 +4,8 @@ body {
   font-family: 'Dongle', sans-serif;
 }
 .wrapper {
-  max-width: 1250px;
-  margin: auto;
+  max-width: 1000px;
+  margin-left: 27em;
   padding: 2em 1em;
 }
 .wrap {
@@ -69,9 +69,12 @@ body {
   cursor: pointer;
   margin: 0 2em;
 }
+.portfolio .hide {
+  display: none;
+}
 .portfolio .title {
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   display: flex;
   font-size: 5em;
   margin-bottom: 1em;
@@ -90,6 +93,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 4em;
+  position: relative;
 }
 .portfolio .wrapper1 .main-title .title {
   color: #fff;
@@ -98,6 +102,24 @@ body {
 .portfolio .wrapper1 .main-title .title i {
   font-size: 0.575em;
   margin-left: 0.5em;
+}
+.portfolio .wrapper1 .menu {
+  position: fixed;
+  z-index: 999;
+  font-size: 2.5em;
+  padding: 0.5em;
+  left: 0;
+  top: 50px;
+}
+.portfolio .wrapper1 .menu span {
+  cursor: pointer;
+}
+.portfolio .wrapper1 .menu .sub-menu {
+  font-size: 0.75em;
+}
+.portfolio .wrapper1 .menu i {
+  font-size: 0.5em;
+  cursor: pointer;
 }
 .portfolio .wrapper2 {
   padding: 30px 0;
@@ -111,10 +133,12 @@ body {
 }
 .portfolio .wrapper2 .about {
   font-size: 2em;
+  margin-bottom: 4em;
 }
 .portfolio .wrapper3 {
   background-color: #f5f5f5;
-  padding: 120px 0;
+  padding: 120px 10px;
+  margin-top: -10em;
 }
 .portfolio .wrapper3 .sub-title {
   align-items: center;
@@ -123,7 +147,8 @@ body {
   margin-bottom: 1em;
 }
 .portfolio .wrapper4 {
-  padding: 120px 0;
+  background-color: #f5f5f5;
+  padding: 120px 10px;
 }
 .portfolio .wrapper4 .title {
   align-items: center;
@@ -139,8 +164,7 @@ body {
   margin-bottom: 1em;
 }
 .portfolio .wrapper5 {
-  background-color: #f5f5f5;
-  padding: 120px 0;
+  padding: 120px 10px;
 }
 .portfolio .wrapper5 .title {
   align-items: center;
@@ -156,7 +180,8 @@ body {
   margin-bottom: 1em;
 }
 .portfolio .wrapper6 {
-  padding: 120px 0;
+  background-color: #f5f5f5;
+  padding: 120px 10px;
 }
 .portfolio .wrapper6 .title {
   align-items: center;
@@ -172,8 +197,7 @@ body {
   margin-bottom: 1em;
 }
 .portfolio .wrapper7 {
-  background-color: #f5f5f5;
-  padding: 120px 0;
+  padding: 120px 10px;
 }
 .portfolio .wrapper7 .title {
   align-items: center;
