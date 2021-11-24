@@ -36,14 +36,15 @@
         <div onClick="moveHome()"><span>HOME</span></div>
         <div onClick="moveAbout()"><span>ABOUT</span></div>
         <div><span>PORTFOLIO</span>
-          <i class="fa fa-arrow-right"></i>
-          <i class="fa fa-arrow-down hide"></i>
+          <i class="fa fa-arrow-right hide"></i>
+          <i class="fa fa-arrow-down"></i>
         </div>
-        <div class="sub-menu sub-menu1"><span>1. MySql 도서관리 시스템</span></div>
-        <div class="sub-menu sub-menu2"><span>2. Sequelize 쇼핑몰 관리자 페이지 (구현중)</span></div>
-        <div class="sub-menu sub-menu3"><span>3. Vue로 만든 도서 관리 시스템</span></div>
-        <div class="sub-menu sub-menu4"><span>4. 카카오 API로 만든 검색창</span></div>
-        <div class="sub-menu sub-menu5"><span>5. vue, OpenWeatherMap API로 만든 검색창</span></div>
+        <div class="sub-menu sub-menu1 hide"><span>1. MySql 도서관리 시스템</span></div>
+        <div class="sub-menu sub-menu2 hide"><span>2. Sequelize 쇼핑몰 관리자 페이지 (구현중)</span></div>
+        <div class="sub-menu sub-menu3 hide"><span>3. Vue로 만든 도서 관리 시스템</span></div>
+        <div class="sub-menu sub-menu4 hide"><span>4. 카카오 API로 만든 검색창</span></div>
+        <div class="sub-menu sub-menu5 hide"><span>5. vue, OpenWeatherMap API로 만든 검색창</span></div>
+        <div onClick="moveContact()"><span>CONTACT</span></div>
       </div>
     </div>
     <div class="wrapper wrapper2">
@@ -52,6 +53,70 @@
         <div>이름 : 최인수</div>
         <div>생년월일 : 1992. 02. 07</div>
         <div>전화번호 : 010 - 4011 - 8741</div>
+      </div>
+      <div class="skill-wrapper">
+        <div class="skill-wrap">
+          <div class="img-wrap">
+            <img src="./img/skill_icon/html.png" class="w-100">
+          </div>
+          <div class="skill">HTML5</div>
+        </div>
+        <div class="skill-wrap">
+          <div class="img-wrap">
+            <img src="./img/skill_icon/css.png" class="w-100">
+          </div>
+          <div class="skill">CSS5</div>
+        </div>
+        <div class="skill-wrap">
+          <div class="img-wrap pt-3">
+            <img src="./img/skill_icon/scss.png" class="w-100" >
+          </div>
+          <div class="skill">SACC / SCSS</div>
+        </div>
+        <div class="skill-wrap">
+          <div class="img-wrap p-2">
+            <img src="./img/skill_icon/js.png" class="w-100" style="border-radius: 70%;">
+          </div>
+          <div class="skill">Java Script <br>ES5 / ES6</div>
+        </div>
+        <div class="skill-wrap">
+          <div class="img-wrap">
+            <img src="./img/skill_icon/jquery.png" class="w-100">
+          </div>
+          <div class="skill">Jquery</div>
+        </div>
+      </div>
+      <div class="skill-wrapper">
+        <div class="skill-wrap">
+          <div class="img-wrap">
+            <img src="./img/skill_icon/vue.png" class="w-100">
+          </div>
+          <div class="skill">VUE / VUEX</div>
+        </div>
+        <div class="skill-wrap">
+          <div class="img-wrap pt-4">
+            <img src="./img/skill_icon/mysql.png" class="w-100">
+          </div>
+          <div class="skill">My Sql</div>
+        </div>
+        <div class="skill-wrap">
+          <div class="img-wrap pt-5">
+            <img src="./img/skill_icon/express.png" class="w-100">
+          </div>
+          <div class="skill">Express</div>
+        </div>
+        <div class="skill-wrap">
+          <div class="img-wrap">
+            <img src="./img/skill_icon/sequelize.png" class="w-100">
+          </div>
+          <div class="skill">Sequelize</div>
+        </div>
+        <div class="skill-wrap">
+          <div class="img-wrap pt-5">
+            <img src="./img/skill_icon/mongodb.png" class="w-100">
+          </div>
+          <div class="skill">MongoDB / Mongoose</div>
+        </div>
       </div>
       <div class="title title-last">PORTFOLIO</div>
     </div>
@@ -71,121 +136,124 @@
           </div>
         </div>
       </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_erd.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">Database ERD</div><br>
-          <div class="sub-text">
-            users 테이블을 중심으로 books(게시글)와 1:多<br><br>
-            users(1) : users_sns(多) / CASCADE<br><br>
-            users(1) : users_withdrawal(多) / CASCADE<br><br>
-            books(1) : files(多) / CASCADE 구현
+      <div class="detail hide">
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/book_erd.PNG" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">Database ERD</div><br>
+            <div class="sub-text">
+              users 테이블을 중심으로 books(게시글)와 1:多<br><br>
+              users(1) : users_sns(多) / CASCADE<br><br>
+              users(1) : users_withdrawal(多) / CASCADE<br><br>
+              books(1) : files(多) / CASCADE 구현
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_auth.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">회원가입</div><br>
-          <div class="sub-text">
-            1. 아이디 검증(특수문자 사용 불가, 중복 불가) 구현<br><br>
-            2. 패스워드 1차, 2차 매치 검증 구현<br><br>
-            3. 형식에 맞지 않는 이메일 또는 중복 검증 구현
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/book_auth.PNG" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">회원가입</div><br>
+            <div class="sub-text">
+              1. 아이디 검증(특수문자 사용 불가, 중복 불가) 구현<br><br>
+              2. 패스워드 1차, 2차 매치 검증 구현<br><br>
+              3. 형식에 맞지 않는 이메일 또는 중복 검증 구현
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_auth_login.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">로그인</div><br>
-          <div class="sub-text">
-            1. 로그인 시 DB상 아이디와 패스워드 일치 여부 확인<br><br>
-            2. passport 모듈사용하여 카카오, 네이버 로그인 구현<br><br>
-            (로그인 시 users_sns 테이블에 정보 저장)<br><br>
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/book_auth_login.PNG" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">로그인</div><br>
+            <div class="sub-text">
+              1. 로그인 시 DB상 아이디와 패스워드 일치 여부 확인<br><br>
+              2. passport 모듈사용하여 카카오, 네이버 로그인 구현<br><br>
+              (로그인 시 users_sns 테이블에 정보 저장)<br><br>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_form.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">도서 등록(게시글 등록)</div><br>
-          <div class="sub-text">
-            1. 제목, 저자, 요약설명과 첨부파일 등록 구현<br><br>
-            2. multer, fs-extra 모듈을 사용하여 첨부파일은<br><br>
-            루트상 storages 폴더에서 관리<br><br>
-            (삭제 시 storages-remove 폴더로 파일 이동)
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/book_form.PNG" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">도서 등록(게시글 등록)</div><br>
+            <div class="sub-text">
+              1. 제목, 저자, 요약설명과 첨부파일 등록 구현<br><br>
+              2. multer, fs-extra 모듈을 사용하여 첨부파일은<br><br>
+              루트상 storages 폴더에서 관리<br><br>
+              (삭제 시 storages-remove 폴더로 파일 이동)
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_auth_update.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">회원 정보 수정</div><br>
-          <div class="sub-text">
-            1. 회원가입과 동일하게 패스워드 검증 구현<br><br>
-            2. 인증 플랫폼 등록 후 인증키 발급시 API키 발급<br><br>
-            3. API키를 이용해 데이터 사용 가능 (json객체 전송)<br>
-            (Vue 도서 관리 시스템에서 사용)
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/book_auth_update.PNG" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">회원 정보 수정</div><br>
+            <div class="sub-text">
+              1. 회원가입과 동일하게 패스워드 검증 구현<br><br>
+              2. 인증 플랫폼 등록 후 인증키 발급시 API키 발급<br><br>
+              3. API키를 이용해 데이터 사용 가능 (json객체 전송)<br>
+              (Vue 도서 관리 시스템에서 사용)
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_lang.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">영문 버전</div><br>
-          <div class="sub-text">
-            1. en 또는 ko로 params 전달 시 한글, 영문판 구현<br><br>
-            2. req.originalUrl.split('/')하여 구분<br><br>
-            3. 한개의 ejs파일에서 변수로 전달
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/book_lang.PNG" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">영문 버전</div><br>
+            <div class="sub-text">
+              1. en 또는 ko로 params 전달 시 한글, 영문판 구현<br><br>
+              2. req.originalUrl.split('/')하여 구분<br><br>
+              3. 한개의 ejs파일에서 변수로 전달
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_auth_exit.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">회원 탈퇴</div><br>
-          <div class="sub-text">
-            1. 회원 탈퇴시 사유를 기재하도록 하여 users_withdrawal DB에 저장<br><br>
-            2. 실제 운용시 마케팅, 활용방안 등을 위한 목적<br><br>
-            3. 본인 확인을 위해 패스워드 검증
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/book_auth_exit.PNG" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">회원 탈퇴</div><br>
+            <div class="sub-text">
+              1. 회원 탈퇴시 사유를 기재하도록 하여 users_withdrawal DB에 저장<br><br>
+              2. 실제 운용시 마케팅, 활용방안 등을 위한 목적<br><br>
+              3. 본인 확인을 위해 패스워드 검증
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_dependencies.png" class="w-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">dependencies</div><br>
-          <div class="sub-text">
-            1. bcrypt : 패스워드 저장시 암호화<br>
-            2. cors : 교차 출처 리소스 공유 (모든 권한 승인)<br>
-            3. fs-extra : 첨부파일 경로 지정, 저장, 이동<br>
-            4. helmet : 보안 모듈<br>
-            5. method-override : HTML에서 PUT, DELETE 구현<br>
-            6. morgan : log 저장<br>
-            7. multer : 첨부파일 저장 enctype="multipart/form-data"<br>
-            8. numeral : 날짜 등 표기법 지정<br>
-            9. passport : 로그인 시 req.user에 로그인 정보 저장
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/book_dependencies.png" class="w-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">dependencies</div><br>
+            <div class="sub-text">
+              1. bcrypt : 패스워드 저장시 암호화<br>
+              2. cors : 교차 출처 리소스 공유 (모든 권한 승인)<br>
+              3. fs-extra : 첨부파일 경로 지정, 저장, 이동<br>
+              4. helmet : 보안 모듈<br>
+              5. method-override : HTML에서 PUT, DELETE 구현<br>
+              6. morgan : log 저장<br>
+              7. multer : 첨부파일 저장 enctype="multipart/form-data"<br>
+              8. numeral : 날짜 등 표기법 지정<br>
+              9. passport : 로그인 시 req.user에 로그인 정보 저장
+            </div>
           </div>
         </div>
       </div>
       <div class="link-wrap">
-        <a href="https://www.dabanbus.kr/book" class="mr-5" target="_blank">
+        <div class="btn-detail mr-4">자세히 보기</div>
+        <a href="https://www.dabanbus.kr/book" class="mr-4" target="_blank">
           <div class="mr-2">사이트 바로가기</div>
           <i class="fab fa-chrome"></i>
         </a>
@@ -205,66 +273,69 @@
           <div class="main-text">Database ERD</div><br>
           <div class="sub-text">
             1. board 테이블 중심으로 관계설정<br><br>
-            2. product 테이블 중심으로 cate, productFile 관계 설정
+            2. product 테이블 중심으로 cate, productFile<br> 관계 설정
           </div>
         </div>
       </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/shop_user.png" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">회원 관리 페이지</div><br>
-          <div class="sub-text">
-            1. 전체 회원에 대한 정보 관리<br><br>
-            2. 회원 구분을 통해 일반, 관리자 등록 구현<br><br>
-            3. 필드(아이디, 이름, 이메일, 전화번호 주소)를 이용해 검색 구현
+      <div class="detail hide">
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/shop_user.png" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">회원 관리 페이지</div><br>
+            <div class="sub-text">
+              1. 전체 회원에 대한 정보 관리<br><br>
+              2. 회원 구분을 통해 일반, 관리자 등록 구현<br><br>
+              3. 필드(아이디, 이름, 이메일, 전화번호 주소)를 이용해 검색 구현
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/shop_prd.png" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">상품 관리 페이지</div><br>
-          <div class="sub-text">
-            1. 전체 회원에 대한 정보 관리<br><br>
-            2. 회원 구분을 통해 일반, 관리자 등록 구현<br><br>
-            3. 필드(아이디, 이름, 이메일, 전화번호 주소)를 이용해 검색 구현
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/shop_prd.png" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">상품 관리 페이지</div><br>
+            <div class="sub-text">
+              1. 전체 회원에 대한 정보 관리<br><br>
+              2. 회원 구분을 통해 일반, 관리자 등록 구현<br><br>
+              3. 필드(아이디, 이름, 이메일, 전화번호 주소)를 이용해 검색 구현
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/shop_cate.png" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">카테고리 관리 페이지</div><br>
-          <div class="sub-text">
-            1. jstree 사용하여 카테고리 구현<br><br>
-            2. 우클릭을 이용해 생성, 삭제 구현<br><br>
-            3. 다중 카테고리시 활용가능한 검색 바 구현
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/shop_cate.png" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">카테고리 관리 페이지</div><br>
+            <div class="sub-text">
+              1. jstree 사용하여 카테고리 구현<br><br>
+              2. 우클릭을 이용해 생성, 삭제 구현<br><br>
+              3. 다중 카테고리시 활용가능한 검색 바 구현
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/shop_board_init.png" class="mw-100">
-        </div>
-        <div class="img-wrap">
-          <img src="./img/shop_board_default.png" class="mw-100">
-          <img src="./img/shop_board_gallery.png" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">게시판 관리 페이지</div><br>
-          <div class="sub-text">
-            1. 게시판 타입 생성 구현(글게시판, 이미지게시판)<br><br>
-            2. 게시판 타입 내에서 게시판 생성, 수정, 삭제 구현<br><br>
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/shop_board_init.png" class="mw-100">
+          </div>
+          <div class="img-wrap">
+            <img src="./img/shop_board_default.png" class="mw-100">
+            <img src="./img/shop_board_gallery.png" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">게시판 관리 페이지</div><br>
+            <div class="sub-text">
+              1. 게시판 타입 생성 구현(글게시판, 이미지게시판)<br><br>
+              2. 게시판 타입 내에서 게시판 생성, 수정, 삭제 구현<br><br>
+            </div>
           </div>
         </div>
       </div>
       <div class="link-wrap">
+        <div class="btn-detail mr-4">자세히 보기</div>
         <a href="https://github.com/dlstn4509/Shop" target="_blank">
           <div class="mr-2">깃허브</div>
           <i class="fab fa-github"></i>
@@ -286,33 +357,36 @@
           </div>
         </div>
       </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_vue_infinite.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">무한 스크롤 페이지</div><br>
-          <div class="sub-text">
-            1. pager를 없에고 window.scrollY 이벤트를 이용해 스크롤시 DB 호출<br><br>
-            2. Infinite Scroll 구현<br><br>
-            3. 데이터 요청시 vue-observe-visibility 사용하여 로딩바 구현<br><br>
-            4. 표지파일 등록 시 썸네일 이미지 구현
+      <div class="detail hide">
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/book_vue_infinite.PNG" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">무한 스크롤 페이지</div><br>
+            <div class="sub-text">
+              1. pager를 없에고 window.scrollY 이벤트를 이용해 스크롤시 DB 호출<br><br>
+              2. Infinite Scroll 구현<br><br>
+              3. 데이터 요청시 vue-observe-visibility 사용하여 로딩바 구현<br><br>
+              4. 표지파일 등록 시 썸네일 이미지 구현
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="img-wrap">
-          <img src="./img/book_vue_api.PNG" class="mw-100">
-        </div>
-        <div class="explain">
-          <div class="main-text">api를 통해 데이터 전송</div><br>
-          <div class="sub-text">
-            1. 등록한 도메인에서 query로 apikey를 이용해 호출시 <br>DB에 저장된 데이터 전송, 수신
+        <div class="wrap">
+          <div class="img-wrap">
+            <img src="./img/book_vue_api.PNG" class="mw-100">
+          </div>
+          <div class="explain">
+            <div class="main-text">api를 통해 데이터 전송</div><br>
+            <div class="sub-text">
+              1. 등록한 도메인에서 query로 apikey를 이용해 호출시 <br>DB에 저장된 데이터 전송, 수신
+            </div>
           </div>
         </div>
       </div>
       <div class="link-wrap">
-        <a href="https://dabanbus-book.firebaseapp.com/" class="mr-5" target="_blank">
+        <div class="btn-detail mr-4">자세히 보기</div>
+        <a href="https://dabanbus-book.firebaseapp.com/" class="mr-4" target="_blank">
           <div class="mr-2">사이트 바로가기</div>
           <i class="fab fa-chrome"></i>
         </a>
@@ -333,7 +407,7 @@
           <div class="sub-text">
             1. 웹사이트, 블로그, 이미지, 동영상, 도서, 카페 검색 기능 구현<br><br>
             2. 이미지 클릭시 모달창 구현<br>
-            일부 사이트(네이버 블로그 등) 원본 이미지 데이터 제공 안하는곳은 <br>썸네일 이미지로 대체<br><br>
+            일부 사이트(네이버 블로그 등) 원본 이미지 데이터 <br>제공 안하는곳은 썸네일 이미지로 대체<br><br>
             3. firebase 통해 배포
           </div>
         </div>
@@ -350,7 +424,7 @@
         </div>
       </div>
       <div class="link-wrap">
-        <a href="https://dabanbus-search.firebaseapp.com/html/02.search.html" class="mr-5" target="_blank">
+        <a href="https://dabanbus-search.firebaseapp.com/html/02.search.html" class="mr-4" target="_blank">
           <div class="mr-2">사이트 바로가기</div>
           <i class="fab fa-chrome"></i>
         </a>
@@ -369,8 +443,8 @@
         <div class="explain">
           <div class="main-text">메인 페이지</div><br>
           <div class="sub-text">
-            1. 접속한 사용자의 Latitude와 Longitude를 기반으로 위치 날씨 제공<br><br>
-            2. navigator.geolocation 사용하여 동의 후 지리 정보 접근 사용<br><br>
+            1. 접속한 사용자의 Latitude와 Longitude를 <br>기반으로 위치 날씨 제공<br><br>
+            2. navigator.geolocation 사용하여 동의 후 <br>지리 정보 접근 사용<br><br>
             3. firebase 배포
           </div>
         </div>
@@ -399,6 +473,18 @@
       </div>
     </div>
   </div>
+  <footer class="footer-wrapper">
+    <div class="footer-wrap wrapper">
+      <div class="bt-wrap">
+        <i class="fa fa-arrow-up"> To the top</i> 
+      </div>
+      <div class="copyright">
+        <i class="fa fa-phone"></i> 010-4011-8741 <span>||</span>
+        <i class="fa fa-envelope"></i> dlstn7609@hanmail.net <span>||</span>
+        <a href="https://github.com/dlstn4509" target="_black"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
   <script src="/js/index.js"></script>
 </body>
 </html>

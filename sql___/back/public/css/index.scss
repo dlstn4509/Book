@@ -5,6 +5,10 @@ html,
 body {
   font-family: 'Dongle', sans-serif;
 }
+a:hover {
+  text-decoration: none;
+  color: red;
+}
 
 body {
 }
@@ -12,7 +16,7 @@ body {
 .wrapper {
   max-width: 1000px;
   margin-left: 27em;
-  padding: 2em 1em;
+  padding: 2em 4em;
 }
 
 .wrap {
@@ -54,6 +58,10 @@ body {
     display: flex;
     font-size: 2em;
   }
+  .btn-detail {
+    font-size: 2em;
+    cursor: pointer;
+  }
 }
 
 .navi-wrapper {
@@ -89,7 +97,7 @@ body {
     margin-bottom: 1em;
   }
   .wrapper1 {
-    background-image: url('../public/img/slide-2.jpg');
+    background-image: url('./img/slide-2.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -135,20 +143,40 @@ body {
   .wrapper2 {
     padding: 30px 0;
     margin-bottom: 10em;
+    overflow: hidden;
     .title {
       align-items: center;
       justify-content: center;
       display: flex;
       font-size: 5em;
+      margin-bottom: 0;
     }
     .about {
       font-size: 2em;
-      margin-bottom: 4em;
+      margin-bottom: 2em;
+    }
+    .skill-wrapper {
+      display: flex;
+      width: 101%;
+      margin-bottom: 5em;
+      padding: 0 3em;
+      .skill-wrap {
+        width: 20%;
+        margin: 0 1% 1% 0;
+        .img-wrap {
+          margin-bottom: 1em;
+          height: 70%;
+        }
+        .skill {
+          text-align: center;
+          font-size: 2em;
+        }
+      }
     }
   }
   .wrapper3 {
     background-color: #f5f5f5;
-    padding: 120px 10px;
+    padding: 120px 20px;
     margin-top: -10em;
     .sub-title {
       align-items: center;
@@ -159,7 +187,7 @@ body {
   }
   .wrapper4 {
     background-color: #f5f5f5;
-    padding: 120px 10px;
+    padding: 120px 20px;
     .title {
       align-items: center;
       justify-content: center;
@@ -175,7 +203,7 @@ body {
     }
   }
   .wrapper5 {
-    padding: 120px 10px;
+    padding: 120px 20px;
     .title {
       align-items: center;
       justify-content: center;
@@ -192,7 +220,7 @@ body {
   }
   .wrapper6 {
     background-color: #f5f5f5;
-    padding: 120px 10px;
+    padding: 120px 20px;
     .title {
       align-items: center;
       justify-content: center;
@@ -221,6 +249,31 @@ body {
       display: flex;
       font-size: 3em;
       margin-bottom: 1em;
+    }
+  }
+}
+.footer-wrapper {
+  background-color: #1b242f;
+  color: #fff;
+  .footer-wrap {
+    &.wrapper {
+      margin: auto;
+    }
+    margin-bottom: 0;
+    .bt-wrap {
+      text-align: center;
+      font-size: 1.5em;
+      margin-bottom: 2em;
+      i {
+        cursor: pointer;
+      }
+    }
+    .copyright {
+      text-align: center;
+      font-size: 2em;
+      span {
+        margin: 0 2em;
+      }
     }
   }
 }

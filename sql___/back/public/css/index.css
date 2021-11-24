@@ -3,10 +3,14 @@ html,
 body {
   font-family: 'Dongle', sans-serif;
 }
+a:hover {
+  text-decoration: none;
+  color: red;
+}
 .wrapper {
   max-width: 1000px;
   margin-left: 27em;
-  padding: 2em 1em;
+  padding: 2em 4em;
 }
 .wrap {
   display: flex;
@@ -47,6 +51,10 @@ body {
 .link-wrap a {
   display: flex;
   font-size: 2em;
+}
+.link-wrap .btn-detail {
+  font-size: 2em;
+  cursor: pointer;
 }
 .navi-wrapper {
   display: flex;
@@ -124,20 +132,40 @@ body {
 .portfolio .wrapper2 {
   padding: 30px 0;
   margin-bottom: 10em;
+  overflow: hidden;
 }
 .portfolio .wrapper2 .title {
   align-items: center;
   justify-content: center;
   display: flex;
   font-size: 5em;
+  margin-bottom: 0;
 }
 .portfolio .wrapper2 .about {
   font-size: 2em;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
+}
+.portfolio .wrapper2 .skill-wrapper {
+  display: flex;
+  width: 101%;
+  margin-bottom: 5em;
+  padding: 0 3em;
+}
+.portfolio .wrapper2 .skill-wrapper .skill-wrap {
+  width: 20%;
+  margin: 0 1% 1% 0;
+}
+.portfolio .wrapper2 .skill-wrapper .skill-wrap .img-wrap {
+  margin-bottom: 1em;
+  height: 70%;
+}
+.portfolio .wrapper2 .skill-wrapper .skill-wrap .skill {
+  text-align: center;
+  font-size: 2em;
 }
 .portfolio .wrapper3 {
   background-color: #f5f5f5;
-  padding: 120px 10px;
+  padding: 120px 20px;
   margin-top: -10em;
 }
 .portfolio .wrapper3 .sub-title {
@@ -148,7 +176,7 @@ body {
 }
 .portfolio .wrapper4 {
   background-color: #f5f5f5;
-  padding: 120px 10px;
+  padding: 120px 20px;
 }
 .portfolio .wrapper4 .title {
   align-items: center;
@@ -164,7 +192,7 @@ body {
   margin-bottom: 1em;
 }
 .portfolio .wrapper5 {
-  padding: 120px 10px;
+  padding: 120px 20px;
 }
 .portfolio .wrapper5 .title {
   align-items: center;
@@ -181,7 +209,7 @@ body {
 }
 .portfolio .wrapper6 {
   background-color: #f5f5f5;
-  padding: 120px 10px;
+  padding: 120px 20px;
 }
 .portfolio .wrapper6 .title {
   align-items: center;
@@ -211,4 +239,29 @@ body {
   display: flex;
   font-size: 3em;
   margin-bottom: 1em;
+}
+.footer-wrapper {
+  background-color: #1b242f;
+  color: #fff;
+}
+.footer-wrapper .footer-wrap {
+  margin-bottom: 0;
+}
+.footer-wrapper .footer-wrap.wrapper {
+  margin: auto;
+}
+.footer-wrapper .footer-wrap .bt-wrap {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 2em;
+}
+.footer-wrapper .footer-wrap .bt-wrap i {
+  cursor: pointer;
+}
+.footer-wrapper .footer-wrap .copyright {
+  text-align: center;
+  font-size: 2em;
+}
+.footer-wrapper .footer-wrap .copyright span {
+  margin: 0 2em;
 }
