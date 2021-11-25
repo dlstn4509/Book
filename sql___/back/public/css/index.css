@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Fruktur&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
 html,
 body {
-  font-family: 'Dongle', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 a:hover {
   text-decoration: none;
@@ -33,11 +33,11 @@ a:hover {
   text-align: left;
 }
 .wrap .explain .main-text {
-  font-size: 4em;
+  font-size: 1.5em;
   margin-bottom: 0.75em;
 }
 .wrap .explain .sub-text {
-  font-size: 2em;
+  font-size: 1em;
   line-height: 40px;
 }
 .link-wrap {
@@ -50,10 +50,10 @@ a:hover {
 }
 .link-wrap a {
   display: flex;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .link-wrap .btn-detail {
-  font-size: 2em;
+  font-size: 1em;
   cursor: pointer;
 }
 .navi-wrapper {
@@ -65,7 +65,7 @@ a:hover {
   background-color: #1b242f;
   z-index: 999;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 .navi-wrapper .navi-wrap {
   width: 100vw;
@@ -84,7 +84,7 @@ a:hover {
   align-items: center;
   justify-content: right;
   display: flex;
-  font-size: 5em;
+  font-size: 0.3em;
   margin-bottom: 1em;
 }
 .portfolio .wrapper1 {
@@ -104,7 +104,7 @@ a:hover {
 }
 .portfolio .wrapper1 .main-title .title {
   color: #fff;
-  font-size: 3em;
+  font-size: 2em;
 }
 .portfolio .wrapper1 .main-title .title i {
   font-size: 0.575em;
@@ -113,10 +113,13 @@ a:hover {
 .portfolio .wrapper1 .menu {
   position: fixed;
   z-index: 999;
-  font-size: 2.5em;
+  font-size: 1.5em;
   padding: 0.5em;
   left: 0;
   top: 50px;
+}
+.portfolio .wrapper1 .menu div {
+  margin-bottom: 0.75em;
 }
 .portfolio .wrapper1 .menu span {
   cursor: pointer;
@@ -125,7 +128,7 @@ a:hover {
   font-size: 0.75em;
 }
 .portfolio .wrapper1 .menu i {
-  font-size: 0.5em;
+  font-size: 0.75em;
   cursor: pointer;
 }
 .portfolio .wrapper2 {
@@ -137,17 +140,17 @@ a:hover {
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 5em;
-  margin-bottom: 0;
+  font-size: 3em;
+  margin-bottom: 2em;
 }
 .portfolio .wrapper2 .about {
-  font-size: 2em;
-  margin-bottom: 2em;
+  font-size: 1.5em;
+  margin-bottom: 3em;
 }
 .portfolio .wrapper2 .skill-wrapper {
   display: flex;
   width: 101%;
-  margin-bottom: 5em;
+  margin-bottom: 10em;
   padding: 0 3em;
 }
 .portfolio .wrapper2 .skill-wrapper .skill-wrap {
@@ -155,12 +158,12 @@ a:hover {
   margin: 0 1% 1% 0;
 }
 .portfolio .wrapper2 .skill-wrapper .skill-wrap .img-wrap {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   height: 70%;
 }
 .portfolio .wrapper2 .skill-wrapper .skill-wrap .skill {
   text-align: center;
-  font-size: 2em;
+  font-size: 1em;
 }
 .portfolio .wrapper3 {
   background-color: #f5f5f5;
@@ -170,7 +173,7 @@ a:hover {
 .portfolio .wrapper3 .sub-title {
   align-items: center;
   display: flex;
-  font-size: 3em;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 .portfolio .wrapper4 {
@@ -181,13 +184,13 @@ a:hover {
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 5em;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 .portfolio .wrapper4 .sub-title {
   align-items: center;
   display: flex;
-  font-size: 3em;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 .portfolio .wrapper5 {
@@ -197,13 +200,13 @@ a:hover {
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 5em;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 .portfolio .wrapper5 .sub-title {
   align-items: center;
   display: flex;
-  font-size: 3em;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 .portfolio .wrapper6 {
@@ -214,13 +217,13 @@ a:hover {
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 5em;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 .portfolio .wrapper6 .sub-title {
   align-items: center;
   display: flex;
-  font-size: 3em;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 .portfolio .wrapper7 {
@@ -230,13 +233,13 @@ a:hover {
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 5em;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 .portfolio .wrapper7 .sub-title {
   align-items: center;
   display: flex;
-  font-size: 3em;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 .footer-wrapper {
@@ -251,7 +254,7 @@ a:hover {
 }
 .footer-wrapper .footer-wrap .bt-wrap {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-bottom: 2em;
 }
 .footer-wrapper .footer-wrap .bt-wrap i {
@@ -259,7 +262,7 @@ a:hover {
 }
 .footer-wrapper .footer-wrap .copyright {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.2em;
 }
 .footer-wrapper .footer-wrap .copyright span {
   margin: 0 2em;

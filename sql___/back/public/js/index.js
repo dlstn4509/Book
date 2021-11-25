@@ -1,7 +1,7 @@
 window.addEventListener('wheel', onScroll);
 function onScroll(e) {
   // console.log(window.scrollY);
-  if (window.scrollY > document.querySelector('.wrapper2').offsetTop - 100)
+  if (window.scrollY > document.querySelector('.wrapper2').offsetTop - 250)
     $('.portfolio .menu').slideDown();
   else $('.portfolio .menu').slideUp();
 }
@@ -23,6 +23,9 @@ document.querySelector('.menu .fa-arrow-down').addEventListener('click', functio
   $(this).addClass('hide');
   $(this).siblings().removeClass('hide');
   $('.sub-menu').slideDown();
+});
+document.querySelector('.port').addEventListener('click', function () {
+  window.scrollTo(0, document.querySelector('.title-last').offsetTop - 100);
 });
 document.querySelector('.sub-menu1').addEventListener('click', function () {
   $('.wrapper3 .detail').slideUp();
@@ -64,15 +67,5 @@ function moveAbout() {
 function moveContact() {
   window.scrollTo(0, 100000);
 }
-
-document.querySelector('.wrapper3 .btn-detail').addEventListener('click', function (e) {
-  $('.wrapper3 .detail').slideDown('1000');
-});
-document.querySelector('.wrapper7 .btn-detail').addEventListener('click', function (e) {
-  $('.wrapper7 .detail').slideDown('1000');
-});
-document.querySelector('.wrapper4 .btn-detail').addEventListener('click', function (e) {
-  $('.wrapper4 .detail').slideDown('1000');
-});
 
 document.querySelector('.bt-wrap i').addEventListener('click', moveHome);

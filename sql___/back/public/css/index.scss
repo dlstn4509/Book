@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Fruktur&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
 /* font-family: 'Noto Sans KR', sans-serif; */
 
 html,
 body {
-  font-family: 'Dongle', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 a:hover {
   text-decoration: none;
@@ -38,11 +38,11 @@ body {
     margin-right: 1em;
     text-align: left;
     .main-text {
-      font-size: 4em;
+      font-size: 1.5em;
       margin-bottom: 0.75em;
     }
     .sub-text {
-      font-size: 2em;
+      font-size: 1em;
       line-height: 40px;
     }
   }
@@ -56,10 +56,10 @@ body {
   margin: auto;
   a {
     display: flex;
-    font-size: 2em;
+    font-size: 1.5em;
   }
   .btn-detail {
-    font-size: 2em;
+    font-size: 1em;
     cursor: pointer;
   }
 }
@@ -73,7 +73,7 @@ body {
   background-color: #1b242f;
   z-index: 999;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.1em;
   .navi-wrap {
     width: 100vw;
     display: flex;
@@ -93,11 +93,11 @@ body {
     align-items: center;
     justify-content: right;
     display: flex;
-    font-size: 5em;
+    font-size: 0.3em;
     margin-bottom: 1em;
   }
   .wrapper1 {
-    background-image: url('../public/img/slide-2.jpg');
+    background-image: url('../img/slide-2.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -113,7 +113,7 @@ body {
     .main-title {
       .title {
         color: #fff;
-        font-size: 3em;
+        font-size: 2em;
         & i {
           font-size: 0.575em;
           margin-left: 0.5em;
@@ -123,10 +123,13 @@ body {
     .menu {
       position: fixed;
       z-index: 999;
-      font-size: 2.5em;
+      font-size: 1.5em;
       padding: 0.5em;
       left: 0;
       top: 50px;
+      div {
+        margin-bottom: 0.75em;
+      }
       span {
         cursor: pointer;
       }
@@ -134,7 +137,7 @@ body {
         font-size: 0.75em;
       }
       i {
-        font-size: 0.5em;
+        font-size: 0.75em;
         cursor: pointer;
       }
     }
@@ -147,28 +150,28 @@ body {
       align-items: center;
       justify-content: center;
       display: flex;
-      font-size: 5em;
-      margin-bottom: 0;
+      font-size: 3em;
+      margin-bottom: 2em;
     }
     .about {
-      font-size: 2em;
-      margin-bottom: 2em;
+      font-size: 1.5em;
+      margin-bottom: 3em;
     }
     .skill-wrapper {
       display: flex;
       width: 101%;
-      margin-bottom: 5em;
+      margin-bottom: 10em;
       padding: 0 3em;
       .skill-wrap {
         width: 20%;
         margin: 0 1% 1% 0;
         .img-wrap {
-          margin-bottom: 1em;
+          margin-bottom: 2em;
           height: 70%;
         }
         .skill {
           text-align: center;
-          font-size: 2em;
+          font-size: 1em;
         }
       }
     }
@@ -180,7 +183,7 @@ body {
     .sub-title {
       align-items: center;
       display: flex;
-      font-size: 3em;
+      font-size: 2em;
       margin-bottom: 1em;
     }
   }
@@ -191,13 +194,13 @@ body {
       align-items: center;
       justify-content: center;
       display: flex;
-      font-size: 5em;
+      font-size: 2em;
       margin-bottom: 1em;
     }
     .sub-title {
       align-items: center;
       display: flex;
-      font-size: 3em;
+      font-size: 2em;
       margin-bottom: 1em;
     }
   }
@@ -207,13 +210,13 @@ body {
       align-items: center;
       justify-content: center;
       display: flex;
-      font-size: 5em;
+      font-size: 2em;
       margin-bottom: 1em;
     }
     .sub-title {
       align-items: center;
       display: flex;
-      font-size: 3em;
+      font-size: 2em;
       margin-bottom: 1em;
     }
   }
@@ -224,13 +227,13 @@ body {
       align-items: center;
       justify-content: center;
       display: flex;
-      font-size: 5em;
+      font-size: 2em;
       margin-bottom: 1em;
     }
     .sub-title {
       align-items: center;
       display: flex;
-      font-size: 3em;
+      font-size: 2em;
       margin-bottom: 1em;
     }
   }
@@ -240,13 +243,13 @@ body {
       align-items: center;
       justify-content: center;
       display: flex;
-      font-size: 5em;
+      font-size: 2em;
       margin-bottom: 1em;
     }
     .sub-title {
       align-items: center;
       display: flex;
-      font-size: 3em;
+      font-size: 2em;
       margin-bottom: 1em;
     }
   }
@@ -261,7 +264,7 @@ body {
     margin-bottom: 0;
     .bt-wrap {
       text-align: center;
-      font-size: 1.5em;
+      font-size: 1.2em;
       margin-bottom: 2em;
       i {
         cursor: pointer;
@@ -269,7 +272,7 @@ body {
     }
     .copyright {
       text-align: center;
-      font-size: 2em;
+      font-size: 1.2em;
       span {
         margin: 0 2em;
       }
