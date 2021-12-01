@@ -5,8 +5,6 @@ function onScroll(e) {
     $('.portfolio .menu').slideDown();
   else $('.portfolio .menu').slideUp();
 }
-console.log(innerHeight);
-console.log(document.querySelector('.wrapper2').offsetTop);
 
 document.querySelector('.navi1').addEventListener('click', moveHome);
 document.querySelector('.navi2').addEventListener('click', moveAbout);
@@ -14,6 +12,9 @@ document.querySelector('.navi3').addEventListener('click', function () {
   window.scrollTo(0, document.querySelector('.title-last').offsetTop - 100);
 });
 document.querySelector('.navi4').addEventListener('click', moveContact);
+document.querySelector('.port').addEventListener('click', function () {
+  $('.sub-menu').removeClass('hide');
+});
 document.querySelector('.menu .fa-arrow-right').addEventListener('click', function (e) {
   $(this).addClass('hide');
   $(this).siblings().removeClass('hide');
