@@ -3,8 +3,9 @@ module.exports = {
     {
       name: 'app.js',
       script: './app.js',
-      watch: '.',
       wait_ready: true,
+      listen_timeout: 50000,
+      kill_timeout: 5000,
     },
   ],
 };
