@@ -69,8 +69,3 @@ const { nextTick } = require('process');
 
 app.use(_404Router);
 app.use(_500Router);
-
-process.on('SIGINT', async () => {
-  await app.close();
-  process.exit(0);
-});
