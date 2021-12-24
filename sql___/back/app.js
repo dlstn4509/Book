@@ -8,6 +8,7 @@ const passportModule = require('./passport');
 const helmet = require('helmet');
 
 const method = require('./middlewares/method-mw');
+
 const logger = require('./middlewares/morgan-mw');
 const session = require('./middlewares/session-mw');
 const locals = require('./middlewares/locals-mw');
